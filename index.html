@@ -34,7 +34,27 @@
       top: 0;
       left: 0;
       z-index: 1000;
-    }
+    }}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.social-icons a img {
+  width: 30px;
+  height: 30px;
+  transition: opacity 0.3s ease;
+}
+
+.social-icons a img:hover {
+  opacity: 0.7;
+}
 
     .container {
       display: flex; align-items: flex-start; justify-content: space-between;
@@ -114,8 +134,20 @@
   </style>
 </head>
 <body>
-  <div class="top-banner">Jamie McCann</div>
-
+  <div class="top-banner">
+  Jamie McCann
+  <div class="social-icons">
+    <a href="https://www.facebook.com/MysticPhoenixCreations/" target="_blank">
+      <img src="facebook-icon.png" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com/cyber_phoenixx917/" target="_blank">
+      <img src="instagram-icon.png" alt="Instagram">
+    </a>
+    <a href="https://x.com/cyber_phoenixx" target="_blank">
+      <img src="twitter-icon.png" alt="Twitter">
+    </a>
+  </div>
+</div>
   <div class="container">
     <div class="hero">
       <div class="buy-button-container">
