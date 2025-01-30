@@ -21,6 +21,12 @@
     a { color: #F05454; text-decoration: none; }
     a:hover { opacity: 0.8; }
 
+/* General Fixes */
+body {
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Top Banner */
 .top-banner {
   background-color: #000;
   color: #fff; 
@@ -42,6 +48,7 @@
   padding: 0 20px;
 }
 
+/* Centering Title & Wings */
 .author-name {
   display: flex;
   align-items: center;
@@ -53,6 +60,7 @@
   white-space: nowrap; /* Prevents line breaks */
 }
 
+/* Wings */
 .wing-left, .wing-right {
   width: 80px; /* Slightly bigger wings */
   height: auto;
@@ -60,6 +68,7 @@
   animation: fireGlow 1.5s infinite alternate;
 }
 
+/* Fire Flickering Animation */
 @keyframes fireGlow {
   0% {
     filter: drop-shadow(0px 0px 3px rgba(255, 69, 0, 0.6));
@@ -69,7 +78,7 @@
   }
 }
 
-/* Ensures social icons adjust nicely */
+/* Social Icons */
 .social-icons {
   display: flex;
   align-items: center;
@@ -105,18 +114,59 @@
 /* 📱 Mobile Adjustments */
 @media (max-width: 768px) {
   .top-banner {
-    height: 55px; /* Reduces banner height on small screens */
-    font-size: 1.8rem; /* Adjusts title size for mobile */
+    height: 50px; /* Reduces banner height */
+    font-size: 1.6rem; /* Adjusts title size for mobile */
     padding: 0 10px;
+  }
+
+  .author-name {
+    gap: 5px; /* Reduces spacing between wings and text */
   }
 
   .wing-left, .wing-right {
     width: 50px; /* Shrinks wings for mobile */
   }
 
+  .social-icons {
+    right: 10px; /* Moves icons closer to the right */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
   .social-icons img {
-    width: 28px; /* Smaller social icons on mobile */
-    height: 28px;
+    width: 25px; /* Smaller social icons */
+    height: 25px;
+    margin-left: 5px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .book-cover {
+    max-width: 200px; /* Shrinks cover to fit smaller screens */
+  }
+
+  .buy-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .buy-button {
+    font-size: 0.9rem; /* Makes buttons slightly smaller */
+    padding: 0.5rem 0.7rem;
+  }
+
+  .buy-buttons-left, .buy-buttons-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
   }
 
   .container {
