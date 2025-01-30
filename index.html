@@ -21,78 +21,126 @@
     a { color: #F05454; text-decoration: none; }
     a:hover { opacity: 0.8; }
 
-   .top-banner {
-      background-color: #000;
-      color: #fff; 
-      text-align: center;
-      padding: 0;
-      font-family: 'Daughter of Fortune', serif;
-      line-height: 1.6;
-      font-size: 2.2rem;
-      margin: 0;
-      width: 100%;
-      height: 70px; /* Keeps banner at original size */
-      position: relative;
-      z-index: 1000;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center; /* Centers content */
-    }
+.top-banner {
+  background-color: #000;
+  color: #fff; 
+  text-align: center;
+  padding: 0;
+  font-family: 'Daughter of Fortune', serif;
+  line-height: 1.6;
+  font-size: 2.2rem;
+  margin: 0;
+  width: 100%;
+  height: 70px; /* Keeps banner at original size */
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap; /* Ensures no wrapping on larger screens */
+  padding: 0 20px;
+}
 
-    .author-name {
-      display: flex;
-      align-items: center;
-      justify-content: center; /* Centers wings & title */
-      gap: 8px; /* Adjust spacing between wings and text */
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%); /* Centers exactly */
-    }
+.author-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Adjusts spacing between wings and text */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Centers exactly */
+  white-space: nowrap; /* Prevents line breaks */
+}
 
-    .wing-left, .wing-right {
-      width: 80px; /* Slightly bigger wings */
-      height: auto;
-      filter: drop-shadow(0px 0px 6px rgba(255, 69, 0, 0.8)); /* Small fiery glow */
-      animation: fireGlow 1.5s infinite alternate;
-    }
+.wing-left, .wing-right {
+  width: 80px; /* Slightly bigger wings */
+  height: auto;
+  filter: drop-shadow(0px 0px 6px rgba(255, 69, 0, 0.8)); /* Small fiery glow */
+  animation: fireGlow 1.5s infinite alternate;
+}
 
-    }
+@keyframes fireGlow {
+  0% {
+    filter: drop-shadow(0px 0px 3px rgba(255, 69, 0, 0.6));
+  }
+  100% {
+    filter: drop-shadow(0px 0px 8px rgba(255, 69, 0, 1));
+  }
+}
 
-    @keyframes fireGlow {
-      0% {
-        filter: drop-shadow(0px 0px 3px rgba(255, 69, 0, 0.6));
-      }
-      100% {
-        filter: drop-shadow(0px 0px 8px rgba(255, 69, 0, 1));
-      }
-    }
+/* Ensures social icons adjust nicely */
+.social-icons {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-    /* Keeps social icons on the right */
-    .social-icons {
-      display: flex;
-      align-items: center;
-      position: absolute;
-      right: 40px;
-      top: 60%;
-      transform: translateY(-50%);
-    }
+.social-icons img {
+  width: 35px; /* Keeps icons larger */
+  height: 35px;
+  margin-left: 10px;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
 
-    .social-icons img {
-      width: 35px; /* Keeps icons small */
-      height: 35px;
-      margin-left: 10px;
-      transition: opacity 0.3s ease;
-    }
+.social-icons img:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
 
-    .social-icons img:hover {
-      opacity: 0.7;
-    }
+/* Adds spacing below the top banner */
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  margin-top: 60px; /* Moves everything down for better spacing */
+}
 
+/* 📱 Mobile Adjustments */
+@media (max-width: 768px) {
+  .top-banner {
+    height: 55px; /* Reduces banner height on small screens */
+    font-size: 1.8rem; /* Adjusts title size for mobile */
+    padding: 0 10px;
+  }
 
-    .container {
-      display: flex; align-items: flex-start; justify-content: space-between;
-      width: 90%; max-width: 1200px; margin: 2rem auto; margin-top: 60px; /* Adds extra space below the top banner */
+  .wing-left, .wing-right {
+    width: 50px; /* Shrinks wings for mobile */
+  }
+
+  .social-icons img {
+    width: 28px; /* Smaller social icons on mobile */
+    height: 28px;
+  }
+
+  .container {
+    margin-top: 40px; /* Adjust spacing for mobile layout */
+  }
+}
+
+/* 🖥️ Large Screen Adjustments */
+@media (min-width: 1200px) {
+  .top-banner {
+    height: 75px; /* Allows a slightly larger banner on big screens */
+    font-size: 2.4rem;
+  }
+
+  .wing-left, .wing-right {
+    width: 90px; /* Slightly larger wings on bigger screens */
+  }
+
+  .social-icons img {
+    width: 40px; /* Adjust social icons slightly for readability */
+    height: 40px;
+  }
+}
+
     }
     .hero { flex: 1; display: flex; flex-direction: column; align-items: center; margin-right: 2rem; }
     .book-cover {
