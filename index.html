@@ -21,41 +21,74 @@
     a { color: #F05454; text-decoration: none; }
     a:hover { opacity: 0.8; }
 
-    .top-banner {
+   .top-banner {
       background-color: #000;
       color: #fff; 
       text-align: center;
-      padding: 0.0rem 0; 
+      padding: 0;
       font-family: 'Daughter of Fortune', serif;
-      line-height: 1.6; /* Adjust to a lower value if needed */
+      line-height: 1.6;
       font-size: 2.2rem;
-      margin: 0
+      margin: 0;
       width: 100%;
-      top: 0;
-      left: 0;
+      height: 70px; /* Keeps banner at original size */
+      position: relative;
       z-index: 1000;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); /* Adds an embossed effect */
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Centers content */
     }
 
+    .author-name {
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Centers wings & title */
+      gap: 8px; /* Adjust spacing between wings and text */
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%); /* Centers exactly */
+    }
+
+    .wing-left, .wing-right {
+      width: 80px; /* Slightly bigger wings */
+      height: auto;
+      filter: drop-shadow(0px 0px 6px rgba(255, 69, 0, 0.8)); /* Small fiery glow */
+      animation: fireGlow 1.5s infinite alternate;
+    }
+
+    }
+
+    @keyframes fireGlow {
+      0% {
+        filter: drop-shadow(0px 0px 3px rgba(255, 69, 0, 0.6));
+      }
+      100% {
+        filter: drop-shadow(0px 0px 8px rgba(255, 69, 0, 1));
+      }
+    }
+
+    /* Keeps social icons on the right */
     .social-icons {
       display: flex;
-      justify-content: center;
-      gap: 1rem;
+      align-items: center;
       position: absolute;
-      right: 20px;
-      top: 4.5%;
+      right: 40px;
+      top: 60%;
       transform: translateY(-50%);
     }
 
-    .social-icons a img {
-      width: 30px;
-      height: 30px;
+    .social-icons img {
+      width: 35px; /* Keeps icons small */
+      height: 35px;
+      margin-left: 10px;
       transition: opacity 0.3s ease;
     }
 
-    .social-icons a img:hover {
+    .social-icons img:hover {
       opacity: 0.7;
     }
+
 
     .container {
       display: flex; align-items: flex-start; justify-content: space-between;
@@ -136,7 +169,11 @@
 </head>
 <body>
 <div class="top-banner">
-  <span class="author-name">Jamie McCann | Author</span>
+  <div class="author-name">
+    <img src="phoenix-wing-left.png" class="wing-left" alt="Left Phoenix Wing">
+    <span>Jamie McCann | Author</span>
+    <img src="phoenix-wing-right.png" class="wing-right" alt="Right Phoenix Wing">
+  </div>
   <div class="social-icons">
     <a href="https://www.facebook.com/MysticPhoenixCreations/" target="_blank">
       <img src="facebook-icon.png" alt="Facebook">
