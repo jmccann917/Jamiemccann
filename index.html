@@ -12,262 +12,266 @@
     @font-face { font-family: 'Daughter of Fortune'; src: url('Daughter of Fortune.ttf') format('truetype'); }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: 'AppleGaramond', serif;
       background: url('TFBack.jpg') center/cover no-repeat fixed #1B1B1B;
-      color: #fff; line-height: 1.6;
+      color: #fff;
+      line-height: 1.6;
       padding-top: 0rem;
+      overflow-x: hidden;
     }
+
     a { color: #F05454; text-decoration: none; }
     a:hover { opacity: 0.8; }
 
-/* General Fixes */
-body {
-  overflow-x: hidden; /* Prevents horizontal scrolling */
-}
-
-/* Top Banner */
-.top-banner {
-  background-color: #000;
-  color: #fff; 
-  text-align: center;
-  padding: 0;
-  font-family: 'Daughter of Fortune', serif;
-  line-height: 1.6;
-  font-size: 2.2rem;
-  margin: 0;
-  width: 100%;
-  height: 70px; /* Keeps banner at original size */
-  position: relative;
-  z-index: 1000;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap; /* Ensures no wrapping on larger screens */
-  padding: 0 20px;
-}
-
-/* Centering Title & Wings */
-.author-name {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px; /* Adjusts spacing between wings and text */
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%); /* Centers exactly */
-  white-space: nowrap; /* Prevents line breaks */
-}
-
-/* Wings */
-.wing-left, .wing-right {
-  width: 80px; /* Slightly bigger wings */
-  height: auto;
-  filter: drop-shadow(0px 0px 6px rgba(255, 69, 0, 0.8)); /* Small fiery glow */
-  animation: fireGlow 1.5s infinite alternate;
-}
-
-/* Fire Flickering Animation */
-@keyframes fireGlow {
-  0% {
-    filter: drop-shadow(0px 0px 3px rgba(255, 69, 0, 0.6));
-  }
-  100% {
-    filter: drop-shadow(0px 0px 8px rgba(255, 69, 0, 1));
-  }
-}
-
-/* Social Icons */
-.social-icons {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  right: 40px;
-  top: 60%;
-  transform: translateY(-50%);
-}
-
-.social-icons img {
-  width: 35px; /* Keeps icons larger */
-  height: 35px;
-  margin-left: 10px;
-  transition: opacity 0.3s ease, transform 0.2s ease;
-}
-
-.social-icons img:hover {
-  opacity: 0.8;
-  transform: scale(1.1);
-}
-
-/* Adds spacing below the top banner */
-.container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 90%;
-  max-width: 1200px;
-  margin: 2rem auto;
-  margin-top: 60px; /* Moves everything down for better spacing */
-}
-
-/* 📱 Mobile Adjustments */
-@media (max-width: 768px) {
-  .top-banner {
-    height: 50px; /* Reduces banner height */
-    font-size: 1.6rem; /* Adjusts title size for mobile */
-    padding: 0 10px;
-  }
-
-  .author-name {
-    gap: 5px; /* Reduces spacing between wings and text */
-  }
-
-  .wing-left, .wing-right {
-    width: 50px; /* Shrinks wings for mobile */
-  }
-
-  .social-icons {
-    right: 10px; /* Moves icons closer to the right */
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .social-icons img {
-    width: 25px; /* Smaller social icons */
-    height: 25px;
-    margin-left: 5px;
-  }
-
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .book-cover {
-    max-width: 200px; /* Shrinks cover to fit smaller screens */
-  }
-
-  .buy-button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .buy-button {
-    font-size: 0.9rem; /* Makes buttons slightly smaller */
-    padding: 0.5rem 0.7rem;
-  }
-
-  .buy-buttons-left, .buy-buttons-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: auto;
-  }
-
-  .container {
-    margin-top: 40px; /* Adjust spacing for mobile layout */
-  }
-}
-
-/* 🖥️ Large Screen Adjustments */
-@media (min-width: 1200px) {
-  .top-banner {
-    height: 75px; /* Allows a slightly larger banner on big screens */
-    font-size: 2.4rem;
-  }
-
-  .wing-left, .wing-right {
-    width: 90px; /* Slightly larger wings on bigger screens */
-  }
-
-  .social-icons img {
-    width: 40px; /* Adjust social icons slightly for readability */
-    height: 40px;
-  }
-}
-
+    .top-banner {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      font-family: 'Daughter of Fortune', serif;
+      font-size: 2.2rem;
+      width: 100%;
+      height: 70px;
+      position: relative;
+      z-index: 1000;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+      padding: 0 20px;
     }
-    .hero { flex: 1; display: flex; flex-direction: column; align-items: center; margin-right: 2rem; }
+
+    .author-name {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+
+    .wing-left, .wing-right {
+      width: 80px;
+      height: auto;
+      filter: drop-shadow(0px 0px 6px rgba(255, 69, 0, 0.8));
+      animation: fireGlow 1.5s infinite alternate;
+    }
+
+    @keyframes fireGlow {
+      0% { filter: drop-shadow(0px 0px 3px rgba(255, 69, 0, 0.6)); }
+      100% { filter: drop-shadow(0px 0px 8px rgba(255, 69, 0, 1)); }
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 40px;
+      top: 60%;
+      transform: translateY(-50%);
+    }
+
+    .social-icons img {
+      width: 35px;
+      height: 35px;
+      margin-left: 10px;
+      transition: opacity 0.3s ease, transform 0.2s ease;
+    }
+
+    .social-icons img:hover {
+      opacity: 0.8;
+      transform: scale(1.1);
+    }
+
+    .container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 90%;
+      max-width: 1200px;
+      margin: 2rem auto;
+      margin-top: 60px;
+    }
+
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 2rem;
+    }
+
     .book-cover {
-      max-width: 275px; width: 100%; margin: 1rem; border: 4px solid #000; border-radius: 5px;
+      max-width: 275px;
+      width: 100%;
+      margin: 1rem;
+      border: 4px solid #000;
+      border-radius: 5px;
     }
+
     .tagline {
-      margin: 1rem 0; font-family: 'PredikatOneday', serif; font-size: 2rem;
-      text-shadow: 0px 8px 30px rgba(0, 0, 0, 1); /* Soft black glow beneath */
+      margin: 1rem 0;
+      font-family: 'PredikatOneday', serif;
+      font-size: 2rem;
+      text-shadow: 0px 8px 30px rgba(0, 0, 0, 1);
       text-align: center;
     }
+
     .book-description {
-      margin: 0 auto; /* Centers the description */
+      margin: 0 auto;
       font-size: 1.125rem;
       line-height: 1.6;
       background: rgba(0, 0, 0, 0.7);
       padding: 1rem;
       border-radius: 5px;
-      max-width: 600px; /* Ensures it doesn’t stretch too wide */
-      text-align: center; /* Centers the text inside */
+      max-width: 600px;
+      text-align: center;
     }
+
     .buy-button-container {
-      display: flex; justify-content: center; align-items: center; text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
+
     .buy-buttons-left,
     .buy-buttons-right {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
     }
+
     .buy-buttons-left {
-      margin-right: 2rem; /* Adds spacing to the right of left-side buttons */
-}
+      margin-right: 2rem;
+    }
 
     .buy-buttons-right {
-      margin-left: 2rem; /* Adds spacing to the left of right-side buttons */
-}
-    .buy-button {
-      background-color: #FF5C33; color: #fff; font-size: 1rem; padding: 0.6rem 0.9rem;
-      border-radius: 5px; border: 3px solid #000; transition: 0.3s;
-      margin-bottom: 1rem; /* Adds space below each button */
+      margin-left: 2rem;
     }
-    .buy-button:hover { background-color: #F05454; }
+
+    .buy-button {
+      background-color: #FF5C33;
+      color: #fff;
+      font-size: 1rem;
+      padding: 0.6rem 0.9rem;
+      border-radius: 5px;
+      border: 3px solid #000;
+      transition: 0.3s;
+      margin-bottom: 1rem;
+    }
+
+    .buy-button:hover {
+      background-color: #F05454;
+    }
 
     .about-section {
-      width: 300px; background: rgba(0, 0, 0, 0.85); padding: 1rem; border-radius: 5px;
+      width: 300px;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 1rem;
+      border-radius: 5px;
     }
-    .about-section h2 { font-size: 1.8rem; margin-bottom: 1rem; color: #FF5C33; }
+
+    .about-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #FF5C33;
+    }
+
     .about-section p {
-      font-size: 1.125rem; line-height: 1.6; margin-bottom: 1.5rem;
+      font-size: 1.125rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
     }
-    .sidebar-signup {
-      margin-top: 2rem;
-    }
-    .sidebar-signup h3 {
-      font-size: 1.5rem; margin-bottom: 1rem; color: #FF5C33;
-    }
-    .sidebar-signup form {
-      display: flex; flex-direction: column; max-width: 300px;
-    }
-    .sidebar-signup input {
-      padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #F05454;
-      border-radius: 3px; background: #2F2F2F; color: #fff;
-    }
-    .sidebar-signup button {
-      background-color: #FF5C33; color: #fff; border: none; padding: 0.75rem;
-      border-radius: 3px; cursor: pointer; transition: background-color 0.3s ease;
-    }
-    .sidebar-signup button:hover { background-color: #F05454; }
 
     @media (max-width: 900px) {
       .hero { margin-right: 1rem; }
       .book-description { max-width: 100%; }
     }
+
     @media (max-width: 768px) {
-      .container { flex-direction: column; align-items: flex-start; }
-      .hero { margin: 0 0 2rem 0; width: 100%; }
-      .about-section { width: 100%; }
+      .top-banner {
+        height: 50px;
+        font-size: 1.6rem;
+        padding: 0 10px;
+      }
+
+      .author-name {
+        gap: 5px;
+      }
+
+      .wing-left, .wing-right {
+        width: 50px;
+      }
+
+      .social-icons {
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .social-icons img {
+        width: 25px;
+        height: 25px;
+        margin-left: 5px;
+      }
+
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0 0 2rem 0;
+      }
+
+      .book-cover {
+        max-width: 200px;
+      }
+
+      .buy-button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .buy-button {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.7rem;
+      }
+
+      .buy-buttons-left, .buy-buttons-right {
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+      }
+
+      .container {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 40px;
+      }
+
+      .about-section {
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .top-banner {
+        height: 75px;
+        font-size: 2.4rem;
+      }
+
+      .wing-left, .wing-right {
+        width: 90px;
+      }
+
+      .social-icons img {
+        width: 40px;
+        height: 40px;
     }
   </style>
 </head>
