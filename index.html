@@ -219,31 +219,26 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
         height: auto;
         padding: 0.5rem;
-        text-align: center;
-        position: relative;
     }
 
       .author-name {
+        order: 1;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        font-size: 1.2rem;
         gap: 6px;
-        padding: 0.4rem 0;
-        position: static;
-        transform: none;
+        font-size: 1.2rem;
         text-align: center;
-        flex-wrap: nowrap;
     }
 
       .isbn {
+        order: 2;
         position: static;
         transform: none;
-        margin-top: 0.4rem;
+        margin-top: 0.3rem;
         font-size: 0.9rem;
         text-align: center;
         color: #fff;
@@ -269,17 +264,22 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
-        margin: 0 0 2rem 0;
+        margin: 0 auto 2rem auto;
       }
 
       .book-cover {
+        order: -1;
         max-width: 200px;
+        width: 80%;
+        margin-bottom: 1rem;
       }
 
       .buy-button-container {
+        display: flex;
         flex-direction: column;
+        width: 100%;
         align-items: center;
-        gap: 8px;
+        gap: 1rem;
       }
 
       .buy-button {
@@ -287,10 +287,17 @@
         padding: 0.5rem 0.7rem;
       }
 
-      .buy-buttons-left, .buy-buttons-right {
+      .buy-buttons-left,
+      .buy-buttons-right {
         flex-direction: column;
         align-items: center;
-        width: auto;
+        width: 48%;
+      }
+      .buy-button-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
       }
 
       .container {
