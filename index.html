@@ -201,10 +201,10 @@
     }
     .author-photo {
         display: block;
-        width: 30%;
+        width: 60%;
         height: auto;
-        max-width: 100px;
-        max-height: 180px;
+        max-width: 150px;
+        max-height: 230px;
         border-radius: 10px;
         margin: 0 auto 1rem auto;
       }
@@ -216,38 +216,54 @@
 
     @media (max-width: 768px) {
       .top-banner {
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         height: auto;
-        padding: 0.5rem 0.2rem;
-        font-size: 1.3rem;
+        padding: 0.5rem;
         text-align: center;
+        position: relative;
     }
 
       .author-name {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        gap: 6px;
+        padding: 0.4rem 0;
         position: static;
         transform: none;
-        font-size: 1.1rem;
-        flex-wrap: wrap;
         text-align: center;
-        justify-content: center;
-        padding: 0.2rem;
+        flex-wrap: nowrap;
     }
 
-      .wing-left,
-      .wing-right {
-        width: 40px;
+      .isbn {
+        position: static;
+        transform: none;
+        margin-top: 0.4rem;
+        font-size: 0.9rem;
+        text-align: center;
+        color: #fff;
     }
 
       .social-icons {
-        position: static;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
         transform: none;
-        justify-content: center;
-        margin-top: 0.5rem;
     }
 
       .social-icons img {
+        width: 28px;
+        height: 28px;
+    }
+      .wing-left,
+      .wing-right {
         width: 30px;
-        height: 30px;
+        height: auto;
     }
       .hero {
         flex-direction: column;
