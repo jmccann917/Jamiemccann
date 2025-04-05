@@ -219,18 +219,21 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        position: relative;
         height: auto;
         padding: 0.5rem;
     }
 
       .author-name {
         order: 1;
+        position: static;
+        transform: none;
+        font-size: 1.2rem;
         display: flex;
-        flex-direction: row;
         align-items: center;
         justify-content: center;
         gap: 6px;
-        font-size: 1.2rem;
+        flex-wrap: nowrap;
         text-align: center;
     }
 
@@ -238,10 +241,10 @@
         order: 2;
         position: static;
         transform: none;
-        margin-top: 0.3rem;
         font-size: 0.9rem;
+        margin-top: 0.3rem;
         text-align: center;
-        color: #fff;
+        color: white;
     }
 
       .social-icons {
@@ -257,29 +260,28 @@
     }
       .wing-left,
       .wing-right {
-        width: 30px;
-        height: auto;
+        display: none;
     }
       .hero {
         flex-direction: column;
         align-items: center;
         width: 100%;
-        margin: 0 auto 2rem auto;
       }
 
       .book-cover {
         order: -1;
         max-width: 200px;
-        width: 80%;
         margin-bottom: 1rem;
       }
 
       .buy-button-container {
         display: flex;
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
         gap: 1rem;
+        width: 100%;
       }
 
       .buy-button {
@@ -289,9 +291,10 @@
 
       .buy-buttons-left,
       .buy-buttons-right {
-        flex-direction: column;
-        align-items: center;
         width: 48%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
       }
       .buy-button-container {
         flex-direction: row;
@@ -329,14 +332,12 @@
 </head>
 <body>
 <div class="top-banner">
+  <div class="isbn">ISBN: 9798227856739</div>
   <div class="author-name">
     <img src="phoenix-wing-left.png" class="wing-left" alt="Left Phoenix Wing">
     <span>Twin Flame Official Book Page | Jamie McCann Author</span>
     <img src="phoenix-wing-right.png" class="wing-right" alt="Right Phoenix Wing">
   </div>
-  <div class="isbn">ISBN: 9798227856739</div>
-</div>
-  
   <div class="social-icons">
     <a href="https://www.facebook.com/JamieMcCannAuthor" target="_blank">
       <img src="facebook-icon.png" alt="Facebook">
