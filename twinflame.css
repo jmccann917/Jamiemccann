@@ -51,7 +51,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
 .author-name {
@@ -210,14 +210,27 @@ body {
 .buy-button:hover {
   background-color: #F05454;
 }
+
+/* -------------------------------
+  Buy Button Layout (Desktop)
+---------------------------------- */
 .buy-button-layout {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 2rem;
   margin: 2rem 0;
   flex-wrap: nowrap;
 }
+
+.buy-button-left,
+.buy-button-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* -------------------------------
   Responsive Adjustments
 ---------------------------------- */
@@ -239,14 +252,14 @@ body {
     margin-top: 0.5rem;
   }
 
-.goodreads-icon {
-  order: 0;
-  position: relative;
-  margin: 0 auto 0.5rem auto;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
+  .goodreads-icon {
+    order: 1;
+    position: relative;
+    margin: 0 auto 0.5rem auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 
   .home-link {
     order: 3;
@@ -256,12 +269,12 @@ body {
 
   .goodreads-icon img,
   .home-link a {
-    max-height: 25px;
+    max-height: 24px;
     font-size: 0.85rem;
   }
 
   .book-cover {
-    max-width: 200px;
+    max-width: 220px;
   }
 
   .buy-button {
@@ -269,11 +282,11 @@ body {
     padding: 0.4rem 0.6rem;
     max-width: 180px;
   }
-}
 
-.buy-button-layout {
-  flex-direction: column;
-  align-items: center;
+  .buy-button-layout {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (min-width: 1200px) {
