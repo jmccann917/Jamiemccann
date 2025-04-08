@@ -51,7 +51,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 .author-name {
@@ -210,7 +210,14 @@ body {
 .buy-button:hover {
   background-color: #F05454;
 }
-
+.buy-button-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: nowrap;
+}
 /* -------------------------------
   Responsive Adjustments
 ---------------------------------- */
@@ -262,6 +269,11 @@ body {
     padding: 0.4rem 0.6rem;
     max-width: 180px;
   }
+}
+
+.buy-button-layout {
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (min-width: 1200px) {
