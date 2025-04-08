@@ -1,0 +1,360 @@
+/* ---------------------------------------
+   Fonts
+------------------------------------------ */
+@font-face { font-family: 'AppleGaramond'; src: url('AppleGaramond.ttf') format('truetype'); }
+@font-face { font-family: 'PredikatOneday'; src: url('Predikat Oneday.ttf') format('truetype'); }
+@font-face { font-family: 'Daughter of Fortune'; src: url('Daughter of Fortune.ttf') format('truetype'); }
+
+/* ---------------------------------------
+   Reset & Base Styles
+------------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'AppleGaramond', serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('TFBack.jpg') center/cover no-repeat fixed;
+  color: #fff;
+  line-height: 1.6;
+  padding-top: 0rem;
+  overflow-x: hidden;
+}
+
+a {
+  color: #F05454;
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.8;
+}
+
+/* ---------------------------------------
+   Top Banner
+------------------------------------------ */
+.top-banner {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 2.0rem;
+  width: 100%;
+  height: 70px;
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding: 0 20px;
+}
+
+.author-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* ---------------------------------------
+   Navigation / Home Link
+------------------------------------------ */
+.home-link {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.home-link a {
+  color: #FF5C33;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.4rem 0.75rem;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.home-link a:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: #FFA07A;
+}
+
+/* ---------------------------------------
+   Goodreads Icon
+------------------------------------------ */
+.goodreads-icon {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  transform: none;
+  z-index: 2;
+}
+
+.goodreads-icon img {
+  height: auto;
+  width: auto;
+  max-height: 30px;
+}
+
+/* ---------------------------------------
+   Wings & Animation
+------------------------------------------ */
+.wing-left, .wing-right {
+  width: 80px;
+  height: auto;
+  filter: drop-shadow(0px 0px 6px rgba(255, 69, 0, 0.8));
+  animation: fireGlow 1.5s infinite alternate;
+}
+
+@keyframes fireGlow {
+  0% { filter: drop-shadow(0px 0px 3px rgba(255, 69, 0, 0.6)); }
+  100% { filter: drop-shadow(0px 0px 8px rgba(255, 69, 0, 1)); }
+}
+
+/* ---------------------------------------
+   Layout Containers
+------------------------------------------ */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+}
+
+/* ---------------------------------------
+   Book Cover Image
+------------------------------------------ */
+.book-cover {
+  max-width: 300px;
+  width: 100%;
+  display: block;
+  margin: 2rem;
+  border: 4px solid #000;
+  border-radius: 5px;
+}
+
+/* ---------------------------------------
+   Tagline - When love burns...
+------------------------------------------ */
+.tagline {
+  margin: 1rem 0;
+  font-family: 'PredikatOneday', serif;
+  font-size: 2rem;
+  text-shadow: 0px 8px 30px rgba(0, 0, 0, 1);
+  text-align: center;
+}
+
+/* ---------------------------------------
+   Book Description
+------------------------------------------ */
+.book-description {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  max-width: 1200px;
+  width: 300%;
+  color: #eee;
+}
+
+/* ---------------------------------------
+   Buy Buttons
+------------------------------------------ */
+.buy-button {
+  background-color: #FF5C33;
+  color: #fff;
+  font-size: 1.3rem;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  border: 2px solid #000;
+  transition: 0.3s;
+  max-width: 200px;
+  width: 100%;
+  text-align: center;
+}
+.buy-button:hover {
+  background-color: #F05454;
+}
+
+/* Buy Button Layout */
+.buy-button-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* ---------------------------------------
+   Media Queries
+------------------------------------------ */
+
+/* Medium Screens */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .about-section {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .book-cover {
+    max-width: 200px;
+  }
+
+  .buy-button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+    max-width: 180px;
+  }
+
+  .top-banner {
+    flex-direction: column;
+    height: auto;
+    font-size: 1.4rem;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  .author-name {
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 1rem;
+    position: static;
+    transform: none;
+  }
+
+  .wing-left,
+  .wing-right {
+    width: 40px;
+  }
+}
+
+/* Small Screens */
+@media (max-width: 768px) {
+  .top-banner {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 0.5rem;
+  }
+
+  .author-name {
+    position: static;
+    transform: none;
+    font-size: 1.0rem;
+    gap: 6px;
+    flex-wrap: nowrap;
+    text-align: right;
+  }
+
+  .goodreads-icon {
+    left: 0;
+    top: 10px;
+    transform: none;
+    padding-left: 6px;
+  }
+
+  .goodreads-icon img {
+    max-height: 25px;
+  }
+
+  .home-link {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    transform: none;
+    z-index: 2;
+  }
+
+  .home-link a {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+    text-decoration: none;
+    color: #FF5C33;
+  }
+
+  .wing-left,
+  .wing-right {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .book-cover {
+    order: -1;
+    max-width: 220px;
+    margin-bottom: 1rem;
+  }
+
+  .buy-button-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buy-button {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+    max-width: 240px;
+    width: 100%;
+    margin: 0.3rem 0;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 40px;
+  }
+
+  .about-section {
+    width: 100%;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+  .top-banner {
+    height: 75px;
+    font-size: 2.4rem;
+  }
+
+  .wing-left, .wing-right {
+    width: 90px;
+  }
+}

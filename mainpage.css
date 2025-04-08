@@ -1,0 +1,105 @@
+/* -------------------------------
+  Global Layout & Background
+---------------------------------- */
+body {
+  background: linear-gradient(rgba(106, 90, 205, 0.6), rgba(106, 90, 205, 0.6)), url('TFBack.jpg') center/cover no-repeat fixed;
+  color: #EDEDED;
+  font-family: 'AppleGaramond', serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* -------------------------------
+  Top Banner & Page Title
+---------------------------------- */
+.top-banner {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.05rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.page-title {
+  margin: 0;
+  font-size: 2.8rem;
+  color: #C8A2C8;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+/* -------------------------------
+  Work Selection (Book Cards)
+---------------------------------- */
+.works-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #D8B4F8;
+  font-size: 1.2rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.work-card img {
+  width: 140px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.work-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(186, 85, 211, 0.5);
+}
+
+/* -------------------------------
+  About Me Section
+---------------------------------- */
+.about-title {
+  font-size: 2rem;
+  color: #C8A2C8;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  margin-top: 0rem;
+}
+
+.about-text-box {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 2rem;
+  margin: 1.5rem auto;
+  max-width: 900px;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+.about-text-box {
+  position: relative;
+  border: 1px solid rgba(200, 162, 200, 0.3);
+  box-shadow:
+    0 0 20px rgba(106, 90, 205, 0.3),
+    0 0 40px rgba(186, 85, 211, 0.2);
+}
+
+/* -------------------------------
+  Author Photo
+---------------------------------- */
+.author-photo {
+  display: block;
+  width: 70%;
+  height: auto;
+  max-width: 180px;
+  max-height: 260px;
+  border-radius: 10px;
+  margin: 1rem auto;
+  border: 2px solid #000;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
