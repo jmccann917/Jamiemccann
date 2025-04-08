@@ -17,14 +17,15 @@ body {
 ---------------------------------- */
 .top-banner {
   background: rgba(0, 0, 0, 0.7);
-  padding: 0.05rem 1rem;
+  padding: 0.75rem 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .page-title {
   margin: 0;
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   color: #C8A2C8;
+  font-family: 'Cinzel Decorative', serif;
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
 }
 
@@ -56,37 +57,48 @@ body {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
+/* Hover Glow Effect for Work Cards*/
 .work-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(186, 85, 211, 0.5);
+  box-shadow: 0 0 25px rgba(255, 105, 180, 0.5);
+  color: #fff;
 }
 
 /* -------------------------------
-  About Me Section
+  About Me Section (Title & Box)
 ---------------------------------- */
 .about-title {
   font-size: 2rem;
   color: #C8A2C8;
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-  margin-top: 0rem;
+  margin-top: 0.5rem;
 }
 
+/* Glowing, Magical About Box */
 .about-text-box {
+  position: relative;
   background: rgba(0, 0, 0, 0.65);
+  color: #EDEDED;
   padding: 2rem;
   margin: 1.5rem auto;
   max-width: 900px;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 1.25rem;
   line-height: 1.8;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 0 0 15px rgba(186, 85, 211, 0.3);
+  animation: borderPulse 4s ease-in-out infinite;
 }
-.about-text-box {
-  position: relative;
-  border: 1px solid rgba(200, 162, 200, 0.3);
-  box-shadow:
-    0 0 20px rgba(106, 90, 205, 0.3),
-    0 0 40px rgba(186, 85, 211, 0.2);
+
+/* Animated glowing border */
+@keyframes borderPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(186, 85, 211, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(186, 85, 211, 0.6);
+  }
 }
 
 /* -------------------------------
