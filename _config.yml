@@ -1,1 +1,7 @@
+title: Jamie McCann | Author Blog
+baseurl: ""
+url: "https://jmccann917.github.io/Jamiemccann"
+theme: minima
 
+plugins:
+  - jekyll-feed
