@@ -44,6 +44,10 @@ body {
   margin: 0;
 }
 
+a[href$="feed.xml"] {
+  display: none;
+}
+
 .top-left-links {
   position: absolute;
   left: 2rem;
