@@ -16,4 +16,4 @@ defaults:
   - scope:
       path: ""
     values:
-      css: "style.scss"
+      css: "style.css"
