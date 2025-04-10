@@ -44,7 +44,11 @@ body {
   margin: 0;
 }
 
-a[href$="feed.xml"] {
+a[href$="feed.xml"], a[href$="feed.xml"]::before {
+  display: none;
+}
+
+.post-list + p {
   display: none;
 }
 
@@ -80,7 +84,7 @@ main.wrapper {
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 .blog-intro {
-  font-size: 1.9rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: #D8B4F8;
   text-align: center;
