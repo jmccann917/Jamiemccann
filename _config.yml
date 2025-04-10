@@ -1,1 +1,19 @@
+title: Ashes & Ink
+description: A dark, romantic blog by Jamie McCann
+baseurl: ""
+url: "https://jmccann917.github.io/Jamiemccann"
+theme: minima
 
+sass:
+  style: compressed
+
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      css: "style.css"
