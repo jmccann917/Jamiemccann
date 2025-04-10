@@ -1,7 +1,108 @@
-<!-- 🖤 Blog Top Banner -->
-<div class="top-banner">
-  <div class="top-left-links">
-    <a href="/" class="banner-link">🏠 Home</a>
-  </div>
-  <h1 class="page-title">Ashes & Ink</h1>
-</div>
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Font */
+@font-face {
+  font-family: 'AppleGaramond';
+  src: url('/assets/fonts/AppleGaramond.ttf') format('truetype');
+}
+
+body {
+  font-family: 'AppleGaramond', serif;
+  background: linear-gradient(rgba(45, 30, 70, 0.7), rgba(45, 30, 70, 0.7)), url('/assets/images/background.PNG') center/cover no-repeat fixed;
+  color: #f0e6ff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Top Banner Styling */
+.top-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.page-title {
+  font-size: 2.2rem;
+  font-family: 'Cinzel Decorative', serif;
+  color: #C8A2C8;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+  margin: 0;
+}
+
+.top-left-links {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.banner-link {
+  color: #EECFFB;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.1rem;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
+
+.banner-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Page Content Box */
+.wrapper {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: rgba(24, 17, 37, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Footer Styling */
+.site-footer {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #EECFFB;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  color: #D8B4F8;
+  text-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+
+/* Links */
+a {
+  color: #89D8FF;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #FFD1F9;
+}
+
+/* Blog post meta text */
+.post-meta {
+  color: #a987d1;
+  font-size: 0.9rem;
+}
+
+/* Post content styling */
+.post-content {
+  text-align: left;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #f7f0ff;
+}
