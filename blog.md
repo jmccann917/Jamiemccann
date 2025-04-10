@@ -3,4 +3,4 @@ layout: home
 title: Ashes & Ink
 ---
 
-Welcome to **Ashes & Ink**, where the fire doesn’t stop at fiction.
+Welcome to **Ashes & Ink** — where stories burn slow and love leaves a scar.
