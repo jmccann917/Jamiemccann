@@ -1,22 +1,10 @@
 title: Ashes & Ink
 description: Where stories smolder and words bleed. A blog by dark romance author Jamie McCann.
-baseurl: "Jamiemccann"
+baseurl: "" 
 url: "https://jmccann917.github.io/Jamiemccann"
 theme: minima
-
 sass:
   style: compressed
-
 markdown: kramdown
-
-include:
-  - assets
-
 plugins:
   - jekyll-feed
-
-defaults:
-  - scope:
-      path: ""
-    values:
-      css: "/assets/css/style.css"
