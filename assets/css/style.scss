@@ -10,12 +10,20 @@
 
 body {
   font-family: 'AppleGaramond', serif;
-  background: linear-gradient(rgba(106, 90, 205, 0.6), rgba(106, 90, 205, 0.6)), url('/assets/images/background.PNG') center/cover no-repeat fixed;
+  background: linear-gradient(rgba(106, 90, 205, 0.6), rgba(106, 90, 205, 0.6)), url('/assets/images/TFBack.jpg') center/cover no-repeat fixed;
   color: #EDEDED;
   line-height: 1.6;
-  text-align: center;
+  margin: 0;
+  padding: 0;
 }
-
+.wrapper {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.6); /* translucent background for readability */
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
 .site-title {
   font-family: 'Cinzel Decorative', serif;
   font-size: 2.4rem;
@@ -35,7 +43,15 @@ body {
   margin-top: 0.5rem;
 }
 
-h1, h2, h3 {
-  color: #EECFFB;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+h1, h2, h3, h4 {
+  color: #F3D0FF;
+  text-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+
+a {
+  color: #ADD8FF;
+}
+
+a:hover {
+  color: #D8B4F8;
 }
