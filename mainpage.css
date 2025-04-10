@@ -28,6 +28,48 @@ body {
   font-family: 'Cinzel Decorative', serif;
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
 }
+.top-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.top-left-links,
+.top-right-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.banner-link {
+  color: #EECFFB;
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-family: 'Cinzel Decorative', serif;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(200, 162, 200, 0.3);
+}
+
+.banner-link:hover {
+  background: rgba(200, 162, 200, 0.2);
+  box-shadow: 0 0 8px rgba(255, 182, 193, 0.4);
+}
+
+.facebook-icon {
+  width: 36px;
+  height: 36px;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+  transition: transform 0.3s;
+}
+
+.facebook-icon:hover {
+  transform: scale(1.15);
+}
 
 /* -------------------------------
   Work Selection (Book Cards)
