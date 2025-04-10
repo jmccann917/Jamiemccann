@@ -1,6 +1,5 @@
 ---
 layout: home
-title: Ashes & Ink
 ---
 
 <link rel="stylesheet" href="/assets/css/style.css">
