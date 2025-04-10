@@ -3,55 +3,73 @@
 
 @import "{{ site.theme }}";
 
+/* Custom Font */
 @font-face {
   font-family: 'AppleGaramond';
   src: url('/assets/fonts/AppleGaramond.ttf') format('truetype');
 }
 
+/* Base Body Styling */
 body {
   font-family: 'AppleGaramond', serif;
-  background: linear-gradient(rgba(106, 90, 205, 0.6), rgba(106, 90, 205, 0.6)), url('/assets/images/background.PNG') center/cover no-repeat fixed;
-  color: #EDEDED;
-  line-height: 1.6;
+  background: linear-gradient(rgba(55, 40, 90, 0.6), rgba(55, 40, 90, 0.6)), url('/assets/images/background.PNG') center/cover no-repeat fixed;
+  color: #f5e9ff;
   margin: 0;
   padding: 0;
 }
+
+/* Page Wrapper */
 .wrapper {
   max-width: 800px;
-  margin: 2rem auto;
+  margin: 3rem auto;
   padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.6); /* translucent background for readability */
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-}
-.site-title {
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 2.4rem;
-  color: #C8A2C8;
-  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
-  margin-top: 1rem;
+  background-color: rgba(24, 17, 37, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
 }
 
-.site-header {
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.site-nav {
-  font-size: 1rem;
-  margin-top: 0.5rem;
-}
-
+/* Headings */
 h1, h2, h3, h4 {
-  color: #F3D0FF;
-  text-shadow: 0 0 4px rgba(0,0,0,0.5);
+  color: #D8B4F8;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 }
 
+/* Links */
 a {
-  color: #ADD8FF;
+  color: #89D8FF;
+  text-decoration: none;
+  transition: 0.3s ease;
 }
 
 a:hover {
+  color: #FFD1F9;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+/* Header & Footer */
+.site-header, .site-footer {
+  background-color: rgba(0, 0, 0, 0.8);
   color: #D8B4F8;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+/* Improve spacing in posts */
+.post-content {
+  text-align: left;
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+.post-meta {
+  color: #a987d1;
+  font-size: 0.9rem;
+}
+
+.site-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2rem;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
 }
