@@ -67,12 +67,21 @@ body {
 /* Page Content Box */
 main.wrapper {
   flex: 1 0 auto;
-  max-width: 800px;
+  max-width: 1000px; /* was 800px */
   margin: 3rem auto;
   padding: 2rem;
   background-color: rgba(24, 17, 37, 0.85);
   border-radius: 16px;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+.blog-intro {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #D8B4F8;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Cinzel Decorative', serif;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Footer Styling */
