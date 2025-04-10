@@ -2,7 +2,7 @@
   Global Layout & Background
 ---------------------------------- */
 body {
-  background: linear-gradient(rgba(106, 90, 205, 0.6), rgba(106, 90, 205, 0.6)), url('../images/TFBack.jpg') center/cover no-repeat fixed;
+  background: linear-gradient(rgba(106, 90, 205, 0.6), rgba(106, 90, 205, 0.6)), url('background.PNG') center/cover no-repeat fixed;
   color: #EDEDED;
   font-family: 'AppleGaramond', serif;
   text-align: center;
