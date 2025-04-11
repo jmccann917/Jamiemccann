@@ -19,11 +19,11 @@ body {
   background: rgba(0, 0, 0, 0.7);
   padding: 0.75rem 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
 }
 
 .page-title {
@@ -36,9 +36,17 @@ body {
 
 .top-left-links,
 .top-right-icons {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.top-left-links {
+  left: 1rem;
+}
+
+.top-right-icons {
+  right: 1rem;
 }
 
 .banner-link {
