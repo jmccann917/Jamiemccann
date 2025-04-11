@@ -19,6 +19,11 @@ body {
   background: rgba(0, 0, 0, 0.7);
   padding: 0.75rem 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .page-title {
@@ -27,13 +32,6 @@ body {
   color: #C8A2C8;
   font-family: 'Cinzel Decorative', serif;
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
-}
-.top-banner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
 }
 
 .top-left-links,
@@ -60,17 +58,6 @@ body {
   box-shadow: 0 0 8px rgba(255, 182, 193, 0.4);
 }
 
-.facebook-icon {
-  width: 36px;
-  height: 36px;
-  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
-  transition: transform 0.3s;
-}
-
-.facebook-icon:hover {
-  transform: scale(1.15);
-}
-
 /* -------------------------------
   Work Selection (Book Cards)
 ---------------------------------- */
@@ -93,19 +80,17 @@ body {
 }
 
 .work-card img {
-  width: 140px;
+  width: 300px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-/* Hover Glow Effect for Work Cards*/
 .work-card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 25px rgba(255, 105, 180, 0.5);
   color: #fff;
 }
-
 /* -------------------------------
   About Me Section (Title & Box)
 ---------------------------------- */
@@ -148,7 +133,7 @@ body {
 ---------------------------------- */
 .author-photo {
   display: block;
-  width: 70%;
+  width: auto;
   height: auto;
   max-width: 180px;
   max-height: 260px;
@@ -156,4 +141,18 @@ body {
   margin: 1rem auto;
   border: 2px solid #000;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* -------------------------------
+  Facebook Icon (used only on About)
+---------------------------------- */
+.facebook-icon {
+  width: 36px;
+  height: 36px;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+  transition: transform 0.3s;
+}
+
+.facebook-icon:hover {
+  transform: scale(1.15);
 }
