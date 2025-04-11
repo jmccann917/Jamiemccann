@@ -21,4 +21,4 @@ Follow me to stay up to date on all things Twin Flame and what’s coming next.
 
 Until then—
 Jamie McCann
-Author of Twin Flame 🔥
+<br>Author of Twin Flame 🔥</br>
