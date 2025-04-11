@@ -5,7 +5,7 @@ date: 2025-04-10
 
 **📚 First-Time Author. Long-Time Story Hoarder.**
 
-<br>Hi, reader friends 👋</br>
+<br>Hi, reader friends 👋
 
 So... this is my first blog post ever. Not just as an author—but like, ever. And I still don’t think it’s fully hit me that I’ve released my debut novel into the world.
 
@@ -22,4 +22,4 @@ Follow me to stay up to date on all things Twin Flame and what’s coming next.
 
 Until then—
 Jamie McCann
-<br>Author of Twin Flame 🔥</br>
+<br>Author of Twin Flame 🔥
