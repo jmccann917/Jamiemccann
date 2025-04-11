@@ -3,7 +3,8 @@ title: "Welcome to Ashes & Ink"
 date: 2025-04-10
 ---
 
-📚 First-Time Author. Long-Time Story Hoarder.
+**📚 First-Time Author. Long-Time Story Hoarder.**
+
 <br>Hi, reader friends 👋</br>
 
 So... this is my first blog post ever. Not just as an author—but like, ever. And I still don’t think it’s fully hit me that I’ve released my debut novel into the world.
