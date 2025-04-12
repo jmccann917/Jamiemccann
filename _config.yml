@@ -8,3 +8,4 @@ sass:
 markdown: kramdown
 plugins:
   - jekyll-feed
+encoding: "utf-8"
