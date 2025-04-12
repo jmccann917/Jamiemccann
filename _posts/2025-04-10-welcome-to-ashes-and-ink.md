@@ -17,5 +17,12 @@ What started as a late-night whisper in my head, a mess of notes in my phone, an
 
 Writing this novel was more than telling a story—it was building a world, bleeding a little onto every page, and finding beauty in the wreckage. If you’re already reading it, thank you. And if you’re new here—hi. I’m glad you found your way in.
 
-Follow me for more haunted love and phoenix-worthy prose 🔥✨  
-— Jamie
+What to Expect Around Here: Behind-the-scenes chaos. Book updates. Characters who won't leave me alone. Sneak peeks. Occasional emotional spirals. And the kind of stories that hurt a little before they heal.
+
+This space won’t be polished—but it’ll be real. And honest. And a little messy. Just like the stories I write. Every story I write burns a little.
+
+Follow me to stay up to date on all things *Twin Flame* and what’s coming next.
+
+Until then —  
+**Jamie McCann**  
+Author of *Twin Flame* 🔥
