@@ -4,7 +4,7 @@ title: "First-Time Author. Long-Time Story Hoarder."
 excerpt: >
   First-Time Author. Long-Time Story Hoarder.  
   Hi, reader friends —  
-  This is my first blog post ever. Not just as an author—but like, ever. And I still don’t think it’s fully hit me that I’ve released my debut novel into the world.
+  This is my first blog post ever. Not just as an author—but like, ever. And I still don’t think it’s fully hit me that I’ve released my debut novel into the world...
 ---
 
 📚 First-Time Author. Long-Time Story Hoarder.
