@@ -1,17 +1,26 @@
 ---
 layout: post
-title: "Test Post for Goodreads 🧪✨"
+title: "Test Post for Goodreads"
 ---
 
-Welcome to **Ashes & Ink**, my corner of the internet where stories smolder and emotions unravel 🔥
+Welcome to **Ashes & Ink**, my blog where I post story updates and personal reflections.  
+This is a simple test to make sure my feed plays nicely with Goodreads.
 
-Here’s a quick formatting check to make sure everything looks beautiful on Goodreads:
+Let’s test formatting:
 
-- *Italics* work just fine 💅
-- **Bold** is nice and dramatic 🖤
-- [Links](https://jamiemccann.com) are totally clickable 📎
-- ![Twin Flame Cover](https://jmccann917.github.io/Jamiemccann/Twin_Flame_Cover.png) ← Images *might* load depending on Goodreads settings
+- *Italics*  
+- **Bold**  
+- [Hyperlinks](https://jamiemccann.com)
 
-> This is a quote block — for deep, moody thoughts or whispered confessions 👀
+> Quote blocks are fun too.
 
-I’ll be using this space to post book updates,
+<!--more-->
+
+Here's the full post with visuals, emoji, and extra sparkle ✨
+
+![Twin Flame Cover](https://jmccann917.github.io/Jamiemccann/Twin_Flame_Cover.png)
+
+I’ll be using this space to post book updates, behind-the-scenes writing moments, and dark little ideas that are too haunted for Twitter.
+
+Stay tuned, friends. 💫  
+— Jamie
