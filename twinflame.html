@@ -16,44 +16,43 @@
   <meta property="og:url" content="https://jmccann917.github.io/Jamiemccann/twinflame/twinflame.html" />
   <meta property="og:type" content="website" />
 
-  <!-- Twitter Card Tags (optional) -->
+  <!-- Twitter Card Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Twin Flame by Jamie McCann" />
   <meta name="twitter:description" content="A dark, emotional romance about obsession, trauma, and the kind of love that brands you forever." />
   <meta name="twitter:image" content="https://raw.githubusercontent.com/jmccann917/Jamiemccann/main/Twin_Flame_Cover.png" />
 
-  <!-- External CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="twinflame.css">
 </head>
 
 <body>
 
-  <!-- 🔥 Top Banner -->
-  <div class="top-banner">
+  <!-- 🔥 Top Banner (matches main-page behavior) -->
+  <header class="tf-top-banner">
+    <!-- Left pill -->
+    <a class="tf-banner-link tf-left" href="https://www.goodreads.com/book/show/231097794-twin-flame" target="_blank" rel="noopener">📚 Goodreads</a>
 
-    <!-- Goodreads Icon (Top Left) -->
-    <div class="goodreads-icon">
-      <a href="https://www.goodreads.com/book/show/231097794-twin-flame" target="_blank" rel="noopener">
-        <img src="goodreads.png" alt="Goodreads">
-      </a>
-    </div>
-
-    <!-- Centered Author Name with Wings -->
-    <div class="author-name">
-      <img src="phoenix-wing-left.png" class="wing-left" alt="Left Phoenix Wing">
+    <!-- Center title with wings -->
+    <h1 class="tf-title">
+      <img src="phoenix-wing-left.png" class="tf-wing tf-wing-left" alt="">
       <span>Twin Flame Official Book Page</span>
-      <img src="phoenix-wing-right.png" class="wing-right" alt="Right Phoenix Wing">
-    </div>
+      <img src="phoenix-wing-right.png" class="tf-wing tf-wing-right" alt="">
+    </h1>
 
-    <!-- Home Link (Top Right) -->
-    <div class="home-link">
-      <a href="index.html">← Return to Home</a>
-    </div>
-  </div>
+    <!-- Right pill -->
+    <a class="tf-banner-link tf-right" href="../index.html">← Return to Home</a>
+
+    <!-- Mobile row (shown under title on smaller screens) -->
+    <nav class="tf-mobile-links">
+      <a class="tf-banner-link" href="https://www.goodreads.com/book/show/231097794-twin-flame" target="_blank" rel="noopener">📚 Goodreads</a>
+      <a class="tf-banner-link" href="../index.html">← Return to Home</a>
+    </nav>
+  </header>
 
   <!-- 📚 Book Content Section -->
-  <div class="container">
-    <div class="hero">
+  <main class="container">
+    <section class="hero">
 
       <!-- 🛒 Buy Buttons and Cover Layout -->
       <div class="buy-button-layout">
@@ -90,8 +89,8 @@
         <p><em>Twin Flame</em> is a dark, emotional romance about trauma, obsession, and the kind of love that doesn’t heal you—it brands you. Forever.</p>
       </div>
 
-    </div>
-  </div>
+    </section>
+  </main>
 
 </body>
 </html>
