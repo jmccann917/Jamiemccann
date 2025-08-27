@@ -27,35 +27,103 @@
 </head>
 <body>
 
-  <!-- Fog overlay if you use it -->
+  <!-- Optional fog overlay -->
   <div class="fog-overlay"></div>
 
-  <!-- Top Banner (grid-based, overlap-proof) -->
+  <!-- Top Banner -->
   <header class="top-banner">
     <a href="https://jamiemccann.com/blog" class="banner-link banner-left">🌙 Read My Blog</a>
     <h1 class="page-title">Jamie McCann | Official Author Site</h1>
     <a href="about.html" class="banner-link banner-right">✨ About Me</a>
 
-    <!-- Row that holds both links when we reflow on tablet/phone -->
+    <!-- Mobile row -->
     <nav class="mobile-links">
       <a href="https://jamiemccann.com/blog" class="banner-link">🌙 Read My Blog</a>
       <a href="about.html" class="banner-link">✨ About Me</a>
     </nav>
   </header>
 
-  <!-- Work Selection -->
+  <!-- Main content -->
   <main>
     <div class="works-links">
+      <!-- Twin Flame -->
       <a href="twinflame.html" class="work-card">
         <img src="Twin_Flame_Cover.png" alt="Twin Flame Cover">
         <span>Twin Flame</span>
       </a>
-      <a href="moonbound.html" class="work-card" style="display:none;">
+
+      <!-- Coming Soon -->
+      <a href="#newsletter" class="work-card coming-soon-card">
+        <div class="coming-soon-box">
+          <h3>New Book Coming Soon</h3>
+          <p>Subscribe for the cover reveal and exclusive sneak peeks!</p>
+        </div>
+        <span>Coming Soon</span>
+      </a>
+
+      <!-- Moonbound (hidden placeholder) -->
+      <a href="moonbound.html" class="work-card" style="display: none;">
         <img src="moonboundcover.png" alt="Moonbound Cover">
         <span>Moonbound</span>
       </a>
     </div>
   </main>
+
+  <!-- Newsletter Footer -->
+  <footer id="newsletter" class="newsletter-footer">
+    <h2>
+      <button id="openNewsletter" class="linklike">
+        🔥 Subscribe to My Newsletter 🔥
+      </button>
+    </h2>
+    <p class="newsletter-tagline">
+      Step into the fire — get exclusive updates, sneak peeks, and dark romance secrets before anyone else.
+    </p>
+  </footer>
+
+  <!-- Modal -->
+  <div id="newsletterModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="newsletterTitle">
+      <button class="modal-close" id="closeNewsletter" aria-label="Close newsletter form">×</button>
+      <h3 id="newsletterTitle" class="modal-title">Join the List</h3>
+      <iframe
+        src="https://jamiemccann.kit.com/dcde57bea6"
+        title="Newsletter Sign-Up"
+        loading="lazy"
+        class="modal-iframe">
+      </iframe>
+      <p class="modal-fallback">
+        Having trouble? <a href="https://jamiemccann.kit.com/dcde57bea6" target="_blank" rel="noopener">Open the signup form in a new tab</a>.
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal JS -->
+  <script>
+    (function () {
+      const modal = document.getElementById('newsletterModal');
+      const opener = document.getElementById('openNewsletter');
+      const closeBtn = document.getElementById('closeNewsletter');
+
+      function openModal() {
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      opener.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+      });
+    })();
+  </script>
 
 </body>
 </html>
