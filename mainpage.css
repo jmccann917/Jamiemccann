@@ -62,25 +62,13 @@ body {
     gap: 12px;
     flex-wrap: wrap;
   }
-  .page-title {
-    font-size: clamp(1.5rem, 5.2vw, 2.4rem);
-    padding: 0 12px;
-  }
+  .page-title { font-size: clamp(1.5rem, 5.2vw, 2.4rem); padding: 0 12px; }
 }
 /* Phone */
 @media (max-width: 600px) {
-  .mobile-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-  .banner-link {
-    font-size: 1rem;
-    padding: 0.45rem 0.7rem;
-  }
-  .page-title {
-    font-size: clamp(1.35rem, 6vw, 2rem);
-  }
+  .mobile-links { flex-direction: column; align-items: center; gap: 8px; }
+  .banner-link { font-size: 1rem; padding: 0.45rem 0.7rem; }
+  .page-title { font-size: clamp(1.35rem, 6vw, 2rem); }
 }
 
 /* ===== Work Cards ===== */
@@ -102,72 +90,95 @@ body {
 }
 .work-card img {
   width: 300px;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  height: 450px;           /* lock to same size for consistency */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.55);
 }
 .work-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px) scale(1.03);
   box-shadow: 0 0 25px rgba(255,105,180,0.5);
   color: #fff;
 }
 
-/* ===== Coming Soon Card ===== */
+/* ===== Coming Soon Card (true card with background) ===== */
 .coming-soon-card { color: #D8B4F8; }
-.coming-soon-box {
+.cs-cover {
+  position: relative;
   width: 300px;
-  height: 450px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: rgba(200, 162, 200, 0.15);
-  border: 2px dashed #C8A2C8;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
-  padding: 1rem;
+  height: 450px;           /* EXACTLY matches Twin Flame */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.55);
+  background:
+    radial-gradient(120% 80% at 50% 20%, rgba(255,140,0,0.25), rgba(0,0,0,0) 60%),
+    radial-gradient(120% 80% at 50% 80%, rgba(186,85,211,0.25), rgba(0,0,0,0) 60%),
+    rgba(20, 10, 28, 0.85) url('background.PNG') center/cover no-repeat; /* subtle brand match */
+  filter: saturate(1.05);
+}
+.cs-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(40% 30% at 50% 50%, rgba(255,120,40,0.35), rgba(0,0,0,0) 70%);
+  mix-blend-mode: screen;
+}
+.cs-text {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
   text-align: center;
 }
-.coming-soon-box h3 {
+.cs-text h3 {
   font-family: 'Cinzel Decorative', serif;
   font-size: 1.6rem;
-  color: #EECFFB;
+  margin: 0 0 0.5rem 0;
+  color: #F0D1FF;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
-.coming-soon-box p { font-size: 1rem; color: #EDEDED; line-height: 1.4; }
-.coming-soon-card:hover .coming-soon-box {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255,105,180,0.5);
+.cs-text p {
+  margin: 0;
+  color: #EDE6F6;
+  line-height: 1.35;
+  max-width: 240px;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.6);
 }
+.coming-soon-card:hover .cs-cover { transform: translateY(-2px) scale(1.03); }
 
 /* ===== Newsletter Footer ===== */
 .newsletter-footer {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 3rem 1.5rem;
+  background: rgba(0, 0, 0, 0.72);
+  padding: 3.25rem 1.5rem 3rem;
   margin-top: 3rem;
   border-top: 2px solid rgba(200, 162, 200, 0.3);
   text-align: center;
 }
 .newsletter-footer h2 {
+  margin: 0 0 0.6rem 0;
   font-family: 'Cinzel Decorative', serif;
-  font-size: 2rem;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
   color: #C8A2C8;
-  margin-bottom: 0.75rem;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
 .linklike {
-  background: none;
-  border: none;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
   color: inherit;
   font: inherit;
   cursor: pointer;
+  padding: 0;
 }
 .linklike:hover { text-decoration: underline; }
 .newsletter-tagline {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: #EDEDED;
-  margin-bottom: 1.5rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  max-width: 720px;
   line-height: 1.6;
 }
 
@@ -175,7 +186,8 @@ body {
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.65);
+  background: rgba(0,0,0,0.68);
+  backdrop-filter: blur(2px);
   display: none;
   align-items: center;
   justify-content: center;
@@ -185,43 +197,44 @@ body {
 .modal-overlay[aria-hidden="false"] { display: flex; }
 .modal {
   position: relative;
-  width: min(720px, 95vw);
-  background: rgba(15, 10, 25, 0.95);
+  width: min(760px, 96vw);
+  background: rgba(15, 10, 25, 0.96);
   border: 1px solid rgba(200,162,200,0.35);
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(255,105,180,0.35);
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6), 0 0 30px rgba(255,105,180,0.25);
   padding: 1rem 1rem 1.25rem;
   text-align: left;
 }
 .modal-title {
-  margin: 0 2rem 0.75rem 0.25rem;
+  margin: 0 2.2rem 0.85rem 0.25rem;
   font-family: 'Cinzel Decorative', serif;
   color: #EECFFB;
 }
 .modal-close {
   position: absolute;
-  right: 1.25rem;
+  right: 1.1rem;
   top: 1rem;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.12);
   border: none;
   color: #EECFFB;
   font-size: 1.6rem;
+  line-height: 1;
   border-radius: 8px;
   cursor: pointer;
 }
 .modal-iframe {
   display: block;
   width: 100%;
-  height: 70vh;
+  height: 85vh;           /* taller to avoid scrollbars */
+  max-height: 760px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   background: #0d0a14;
 }
 .modal-fallback { text-align: center; margin-top: 0.75rem; }
 .modal-fallback a { color: #D8B4F8; }
+
 @media (max-width: 600px) {
-  .newsletter-footer h2 { font-size: 1.6rem; }
-  .newsletter-tagline { font-size: 1rem; }
   .modal { padding: 0.75rem; }
-  .modal-iframe { height: 68vh; }
+  .modal-iframe { height: 78vh; }
 }
