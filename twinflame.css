@@ -42,7 +42,7 @@ body{
   z-index:10;
 }
 
-/* Title inline with wings */
+/* Title with inline wings (desktop/tablet) */
 .tf-title{
   margin:0;
   font-family:'Cinzel Decorative',serif;
@@ -95,38 +95,19 @@ body{
 }
 
 /* ---------------------------
-  Phone: title on top; wings flank stacked buttons
+  Phone: no wings; pills side by side under title
 ---------------------------- */
 @media (max-width:600px){
-  .tf-title{
-    font-size:1.3rem;
-    white-space:normal;
-  }
-  /* hide inline wings on small screens */
+  /* hide wings */
   .tf-title .tf-wing{ display:none; }
+  .tf-title{ font-size:1.3rem; }
 
   .tf-mobile-links{
-    position:relative;
     display:flex;
-    flex-direction:column; /* stack vertically */
-    align-items:center;
-    gap:10px;
+    justify-content:center;
+    gap:12px; /* side by side */
     margin-top:.25rem;
-    padding:12px 72px;     /* room for wings */
   }
-  .tf-mobile-links::before,
-  .tf-mobile-links::after{
-    content:"";
-    position:absolute;
-    top:50%; transform:translateY(-50%);
-    width:58px; height:28px;
-    background-repeat:no-repeat; background-position:center; background-size:contain;
-    filter:drop-shadow(0 0 6px rgba(255,120,40,.85));
-    pointer-events:none;
-  }
-  .tf-mobile-links::before{ left:8px;  background-image:url('phoenix-wing-left.png'); }
-  .tf-mobile-links::after{  right:8px; background-image:url('phoenix-wing-right.png'); }
-
   .tf-banner-link{ font-size:1rem; padding:.42rem .7rem; }
 }
 
