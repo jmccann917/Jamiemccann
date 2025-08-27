@@ -29,7 +29,6 @@ body {
   color: #C8A2C8;
   text-shadow: 0 0 6px rgba(0,0,0,0.6);
   font-size: clamp(1.6rem, 4.2vw, 2.8rem);
-  line-height: 1.15;
 }
 .banner-link {
   color: #EECFFB;
@@ -48,7 +47,6 @@ body {
 }
 .mobile-links { display: none; }
 
-/* Tablet */
 @media (max-width: 1100px) {
   .top-banner {
     grid-template-columns: 1fr;
@@ -60,13 +58,10 @@ body {
     display: flex;
     justify-content: center;
     gap: 12px;
-    flex-wrap: wrap;
   }
-  .page-title { font-size: clamp(1.5rem, 5.2vw, 2.4rem); padding: 0 12px; }
 }
-/* Phone */
 @media (max-width: 600px) {
-  .mobile-links { flex-direction: column; align-items: center; gap: 8px; }
+  .mobile-links { flex-direction: column; gap: 8px; }
   .banner-link { font-size: 1rem; padding: 0.45rem 0.7rem; }
   .page-title { font-size: clamp(1.35rem, 6vw, 2rem); }
 }
@@ -90,8 +85,7 @@ body {
 }
 .work-card img {
   width: 300px;
-  height: 450px;           /* lock to same size for consistency */
-  object-fit: cover;
+  height: auto; /* keep original proportions */
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.55);
 }
@@ -101,92 +95,68 @@ body {
   color: #fff;
 }
 
-/* ===== Coming Soon Card (true card with background) ===== */
+/* ===== Coming Soon Card ===== */
 .coming-soon-card { color: #D8B4F8; }
-.cs-cover {
-  position: relative;
+.cs-card {
   width: 300px;
-  height: 450px;           /* EXACTLY matches Twin Flame */
+  height: auto;
+  min-height: 450px; /* match typical cover aspect height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 12px;
-  overflow: hidden;
+  background: #1c1124; /* plain dark purple */
   box-shadow: 0 10px 25px rgba(0,0,0,0.55);
-  background:
-    radial-gradient(120% 80% at 50% 20%, rgba(255,140,0,0.25), rgba(0,0,0,0) 60%),
-    radial-gradient(120% 80% at 50% 80%, rgba(186,85,211,0.25), rgba(0,0,0,0) 60%),
-    rgba(20, 10, 28, 0.85) url('background.PNG') center/cover no-repeat; /* subtle brand match */
-  filter: saturate(1.05);
-}
-.cs-glow {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(40% 30% at 50% 50%, rgba(255,120,40,0.35), rgba(0,0,0,0) 70%);
-  mix-blend-mode: screen;
-}
-.cs-text {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  padding: 1.25rem;
+  padding: 1rem;
   text-align: center;
 }
-.cs-text h3 {
+.cs-card h3 {
   font-family: 'Cinzel Decorative', serif;
   font-size: 1.6rem;
-  margin: 0 0 0.5rem 0;
   color: #F0D1FF;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+  margin-bottom: 0.75rem;
 }
-.cs-text p {
-  margin: 0;
-  color: #EDE6F6;
-  line-height: 1.35;
+.cs-card p {
+  font-size: 1rem;
+  color: #EDEDED;
   max-width: 240px;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+  line-height: 1.4;
 }
-.coming-soon-card:hover .cs-cover { transform: translateY(-2px) scale(1.03); }
 
 /* ===== Newsletter Footer ===== */
 .newsletter-footer {
   background: rgba(0, 0, 0, 0.72);
-  padding: 3.25rem 1.5rem 3rem;
+  padding: 3rem 1.5rem;
   margin-top: 3rem;
   border-top: 2px solid rgba(200, 162, 200, 0.3);
   text-align: center;
 }
 .newsletter-footer h2 {
-  margin: 0 0 0.6rem 0;
   font-family: 'Cinzel Decorative', serif;
-  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-size: 2rem;
   color: #C8A2C8;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  margin-bottom: 0.75rem;
 }
 .linklike {
-  appearance: none !important;
-  -webkit-appearance: none !important;
-  background: none !important;
-  border: none !important;
-  box-shadow: none !important;
+  background: none;
+  border: none;
   color: inherit;
   font: inherit;
   cursor: pointer;
-  padding: 0;
 }
-.linklike:hover { text-decoration: underline; }
 .newsletter-tagline {
   font-size: 1.1rem;
   color: #EDEDED;
   margin: 0 auto;
-  max-width: 720px;
-  line-height: 1.6;
+  max-width: 700px;
 }
 
 /* ===== Modal ===== */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.68);
+  background: rgba(0,0,0,0.65);
   backdrop-filter: blur(2px);
   display: none;
   align-items: center;
@@ -203,38 +173,30 @@ body {
   border-radius: 14px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.6), 0 0 30px rgba(255,105,180,0.25);
   padding: 1rem 1rem 1.25rem;
-  text-align: left;
 }
 .modal-title {
-  margin: 0 2.2rem 0.85rem 0.25rem;
+  margin: 0 2rem 0.85rem 0.25rem;
   font-family: 'Cinzel Decorative', serif;
   color: #EECFFB;
 }
 .modal-close {
   position: absolute;
-  right: 1.1rem;
+  right: 1rem;
   top: 1rem;
   background: rgba(255,255,255,0.12);
   border: none;
   color: #EECFFB;
   font-size: 1.6rem;
-  line-height: 1;
   border-radius: 8px;
   cursor: pointer;
 }
 .modal-iframe {
   display: block;
   width: 100%;
-  height: 85vh;           /* taller to avoid scrollbars */
-  max-height: 760px;
+  height: 80vh;
   border: none;
   border-radius: 10px;
   background: #0d0a14;
 }
 .modal-fallback { text-align: center; margin-top: 0.75rem; }
 .modal-fallback a { color: #D8B4F8; }
-
-@media (max-width: 600px) {
-  .modal { padding: 0.75rem; }
-  .modal-iframe { height: 78vh; }
-}
