@@ -26,9 +26,9 @@ body {
   font-family: 'Cinzel Decorative', serif;
   color: #C8A2C8;
   text-shadow: 0 0 6px rgba(0,0,0,0.6);
-  font-size: clamp(1.2rem, 2.2vw, 1.8rem); /* smaller on big screens */
+  font-size: clamp(1.2rem, 2.2vw, 1.8rem);
   line-height: 1.2;
-  white-space: nowrap; /* one line on large screens */
+  white-space: nowrap; /* single line on large screens */
 }
 .banner-link {
   color: #EECFFB;
@@ -63,7 +63,7 @@ body {
   }
   .page-title {
     font-size: clamp(1.3rem, 4.2vw, 1.7rem);
-    white-space: normal;
+    white-space: normal; /* allow wrapping on smaller screens */
     text-align: center;
   }
 }
@@ -146,19 +146,45 @@ body {
   color: #C8A2C8;
   margin-bottom: 0.75rem;
 }
+
+/* Glow link styling for Subscribe */
 .linklike {
   background: none;
   border: none;
   color: inherit;
   font: inherit;
   cursor: pointer;
+  padding: 0;
 }
+.glow-link {
+  text-shadow: 0 0 6px rgba(200,162,200,0.35);
+  transition: text-shadow 0.25s ease, transform 0.25s ease;
+}
+.glow-link:hover,
+.glow-link:focus {
+  text-shadow: 0 0 10px rgba(255,182,193,0.65), 0 0 18px rgba(186,85,211,0.55);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+/* Keep tagline one line on desktop, wrap on smaller screens */
 .newsletter-tagline {
   font-size: 1.1rem;
   color: #EDEDED;
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 1200px;       /* large container so it can be one line */
   line-height: 1.6;
+  text-align: center;
+}
+@media (min-width: 1000px) {
+  .newsletter-tagline {
+    white-space: nowrap;   /* force single line on desktop widths */
+  }
+}
+@media (max-width: 999px) {
+  .newsletter-tagline {
+    white-space: normal;   /* allow wrapping on smaller screens */
+  }
 }
 
 /* ===== Modal ===== */
