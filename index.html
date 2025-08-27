@@ -113,14 +113,11 @@
       function closeModal() {
         modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
-        // mark as shown so we don't auto-open again this session
         try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch(e){}
       }
 
-      // manual open
       opener.addEventListener('click', openModal);
 
-      // close interactions
       closeBtn.addEventListener('click', closeModal);
       modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal();
@@ -129,12 +126,10 @@
         if (e.key === 'Escape') closeModal();
       });
 
-      // auto-open after 5s, but only once per session
       try {
         const already = sessionStorage.getItem(STORAGE_KEY) === '1';
         if (!already) {
           setTimeout(() => {
-            // only open if it's still hidden
             if (modal.getAttribute('aria-hidden') !== 'false') {
               openModal();
               sessionStorage.setItem(STORAGE_KEY, '1');
@@ -142,7 +137,6 @@
           }, 5000);
         }
       } catch(e) {
-        // if storage blocked, still open once
         setTimeout(openModal, 5000);
       }
     })();
