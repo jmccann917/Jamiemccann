@@ -33,7 +33,7 @@ body {
   text-align: center;
 }
 
-/* Side pills are positioned so they don't affect centering */
+/* Side pills (home page) positioned so they don't affect centering */
 .banner-left {
   position: absolute;
   left: 1rem;
@@ -248,7 +248,7 @@ body {
 .modal-fallback { text-align: center; margin-top: 0.75rem; }
 .modal-fallback a { color: #D8B4F8; }
 
-/* ---------- About Page ---------- */
+/* ---------- About Page Layout ---------- */
 .about-container {
   display: flex;
   justify-content: center;
@@ -258,21 +258,36 @@ body {
   margin: 3rem auto;
   padding: 0 1rem;
 }
-
 .author-photo {
   width: 260px;
-  border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  border-radius: 10px;
+  border: 2px solid #000;
+  box-shadow: 0 8px 20px rgba(0,0,0,.6);
 }
 
+/* Glowing, readable background for the text */
 .about-text {
   flex: 1;
   font-size: 1.15rem;
   line-height: 1.7;
   color: #f3e7df;
+
+  position: relative;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(186, 85, 211, 0.45);
+  border-radius: 12px;
+  padding: 1.25rem 1.4rem;
+  box-shadow: 0 0 15px rgba(186,85,211,0.3);
+  animation: borderPulse 4s ease-in-out infinite;
 }
 
-/* 📱 Mobile Fix */
+/* Animated glowing border */
+@keyframes borderPulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(186, 85, 211, 0.30); }
+  50%      { box-shadow: 0 0 25px rgba(186, 85, 211, 0.60); }
+}
+
+/* 📱 Mobile Fix for About */
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;
@@ -282,21 +297,21 @@ body {
 
   .author-photo {
     width: 70%;
-    max-width: 300px;
+    max-width: 320px;
   }
 
   .about-text {
     text-align: left;
     margin-top: 1rem;
   }
-  
 }
+
+/* ---------- Social pills (top-right) ---------- */
 .top-right-icons {
   display: flex;
   gap: 0.5rem;
   align-items: center;
 }
-
 .top-right-icons .banner-link {
   font-size: 1rem;
   padding: 0.4rem 0.8rem;
@@ -306,9 +321,55 @@ body {
   text-decoration: none;
   transition: all 0.25s ease;
 }
-
 .top-right-icons .banner-link:hover {
   background: rgba(255, 140, 0, 0.18);
   box-shadow: 0 0 10px rgba(255, 140, 0, 0.45);
 }
 
+/* ===== About header: keep title centered on desktop, links under title on tablet/phone ===== */
+.top-left-links {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.top-right-icons {
+  position: absolute;      /* absolute on desktop so title stays centered */
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (max-width: 1100px) {
+  .top-banner{
+    display: grid;                     /* title on row 1, links row on 2 */
+    grid-template-columns: auto auto;  /* two columns for two link groups */
+    grid-template-rows: auto auto;
+    justify-content: center;
+    row-gap: 6px;
+    padding-bottom: .6rem;
+  }
+  .page-title{ grid-column: 1 / -1; }  /* title spans full width */
+
+  .top-left-links,
+  .top-right-icons{
+    position: static;                  /* release absolute */
+    transform: none;
+  }
+  .top-left-links{ justify-self: end; }
+  .top-right-icons{ justify-self: start; }
+
+  .top-left-links .banner-link,
+  .top-right-icons .banner-link{
+    font-size: .95rem;
+    padding: .38rem .7rem;
+  }
+}
+@media (max-width: 600px){
+  .top-banner{ grid-template-columns: 1fr 1fr; }
+  .top-left-links,
+  .top-right-icons{ justify-self: center; }
+  .top-right-icons .banner-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
