@@ -11,16 +11,17 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== Top Banner ===== */
+/* ===== Top Banner (centered title on desktop) ===== */
 .top-banner {
+  position: relative;
   background: rgba(0, 0, 0, 0.7);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0.4rem 1rem;   /* thinner bar */
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
-  column-gap: 1rem;
+  justify-content: center;   /* keeps title centered */
 }
+
 .page-title {
   margin: 0;
   font-family: 'Cinzel Decorative', serif;
@@ -28,8 +29,24 @@ body {
   text-shadow: 0 0 6px rgba(0,0,0,0.6);
   font-size: clamp(1.2rem, 2.2vw, 1.8rem);
   line-height: 1.2;
-  white-space: nowrap; /* single line on large screens */
+  white-space: nowrap;       /* single line on large screens */
+  text-align: center;
 }
+
+/* Side pills are positioned so they don't affect centering */
+.banner-left {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.banner-right {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .banner-link {
   color: #EECFFB;
   text-decoration: none;
@@ -45,21 +62,20 @@ body {
   background: rgba(200, 162, 200, 0.2);
   box-shadow: 0 0 8px rgba(255, 182, 193, 0.4);
 }
+
+/* Mobile row hidden on desktop */
 .mobile-links { display: none; }
 
-/* Tablet */
+/* ===== Tablet ===== */
 @media (max-width: 1100px) {
-  .top-banner {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    row-gap: 0.5rem;
-  }
-  .banner-left, .banner-right { display: none; }
+  .banner-left, .banner-right { display: none; }   /* hide side pills */
   .mobile-links {
     display: flex;
     justify-content: center;
     gap: 12px;
     flex-wrap: wrap;
+    width: 100%;
+    margin-top: 6px;
   }
   .page-title {
     font-size: clamp(1.3rem, 4.2vw, 1.7rem);
@@ -68,7 +84,7 @@ body {
   }
 }
 
-/* Phone */
+/* ===== Phone ===== */
 @media (max-width: 600px) {
   .mobile-links { flex-direction: column; align-items: center; gap: 8px; }
   .banner-link { font-size: 0.9rem; padding: 0.4rem 0.6rem; }
@@ -172,19 +188,15 @@ body {
   font-size: 1.1rem;
   color: #EDEDED;
   margin: 0 auto;
-  max-width: 1200px;       /* large container so it can be one line */
+  max-width: 1200px;
   line-height: 1.6;
   text-align: center;
 }
 @media (min-width: 1000px) {
-  .newsletter-tagline {
-    white-space: nowrap;   /* force single line on desktop widths */
-  }
+  .newsletter-tagline { white-space: nowrap; }
 }
 @media (max-width: 999px) {
-  .newsletter-tagline {
-    white-space: normal;   /* allow wrapping on smaller screens */
-  }
+  .newsletter-tagline { white-space: normal; }
 }
 
 /* ===== Modal ===== */
