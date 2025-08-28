@@ -19,7 +19,7 @@ body {
   padding: 0.4rem 1rem;
   display: flex;
   align-items: center;
-  justify-content: center;   /* center title on desktop */
+  justify-content: center; /* center title on desktop */
 }
 
 .page-title {
@@ -33,7 +33,7 @@ body {
   text-align: center;
 }
 
-/* Default header pill positions (used on home, etc.) */
+/* Default header pill positions (home page etc.) */
 .banner-left {
   position: absolute;
   left: 1rem;
@@ -62,9 +62,10 @@ body {
   box-shadow: 0 0 8px rgba(255,182,193,0.4);
 }
 
+/* Mobile row hidden by default */
 .mobile-links { display: none; }
 
-/* Tablet defaults (home etc.) */
+/* ===== Tablet defaults (site-wide) ===== */
 @media (max-width: 1100px) {
   .banner-left, .banner-right { display: none; }
   .mobile-links {
@@ -158,7 +159,7 @@ body {
   margin-bottom: 0.75rem;
 }
 
-/* Glow link styling for Subscribe */
+/* Glow link for Subscribe */
 .linklike {
   background: none;
   border: none;
@@ -178,7 +179,7 @@ body {
   outline: none;
 }
 
-/* Keep tagline one line on desktop, wrap on smaller screens */
+/* Newsletter tagline wrapping */
 .newsletter-tagline {
   font-size: 1.1rem;
   color: #EDEDED;
@@ -245,29 +246,29 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 2rem;
-  max-width: 1000px;
-  margin: 3rem auto;
+  max-width: 1200px;
+  margin: 2rem auto 3.5rem;
   padding: 0 1rem;
 }
 .author-photo {
-  width: 260px;
+  width: 320px;
   border-radius: 10px;
   border: 2px solid #000;
   box-shadow: 0 8px 20px rgba(0,0,0,.6);
 }
 
-/* Glowing, readable background for the text */
+/* Bio card */
 .about-text {
   flex: 1;
+  max-width: 780px;
   font-size: 1.15rem;
-  line-height: 1.7;
+  line-height: 1.75;
   color: #f3e7df;
 
-  position: relative;
   background: rgba(0, 0, 0, 0.65);
   border: 1px solid rgba(186,85,211,0.45);
   border-radius: 12px;
-  padding: 1.25rem 1.4rem;
+  padding: 1.25rem 1.5rem;
   box-shadow: 0 0 15px rgba(186,85,211,0.3);
   animation: borderPulse 4s ease-in-out infinite;
 }
@@ -276,56 +277,72 @@ body {
   50%     { box-shadow: 0 0 25px rgba(186,85,211,0.60); }
 }
 
-/* About: mobile stack */
-@media (max-width: 768px) {
+/* About mobile stack */
+@media (max-width: 900px) {
   .about-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  .author-photo { width: 70%; max-width: 320px; }
-  .about-text   { text-align: left; margin-top: 1rem; }
+  .author-photo { width: 72%; max-width: 340px; }
+  .about-text   { text-align: left; margin-top: 1rem; max-width: 90vw; }
 }
 
-/* ---------- About page banner overrides ---------- */
-.about-page .top-banner {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;   /* title then links row */
-  align-items: center;
-  text-align: center;
-}
-.about-page .page-title {
-  margin: 0 0 0.8rem 0;
-  font-size: clamp(1.8rem, 3vw, 2.4rem); /* bigger for About */
-}
-.about-page .top-links-row {
-  display: flex;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 0.5rem;
-}
-.about-page .top-links-row .banner-link {
-  font-size: 1rem;
-  padding: 0.45rem 0.9rem;
-  border-radius: 6px;
-  background: rgba(255,255,255,0.1);
-  color: #ffd9c2;
-  text-decoration: none;
-  transition: all 0.25s ease;
-}
-.about-page .top-links-row .banner-link:hover {
-  background: rgba(255,140,0,0.18);
-  box-shadow: 0 0 10px rgba(255,140,0,0.45);
-}
-/* Make sure any left/right groups from other pages don’t appear here */
+/* ---------- ABOUT PAGE: desktop/tablet vs mobile header behavior ---------- */
+
+/* Desktop/Tablet (≥1100px): title centered, left & right groups visible, mobile row hidden */
 .about-page .top-left-links,
-.about-page .top-right-icons { display: none; }
+.about-page .top-right-icons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.about-page .top-left-links  { left: 1rem; }
+.about-page .top-right-icons { right: 1rem; }
 
+.about-page .top-links-row { display: none; } /* hide mobile row */
+.about-page .page-title { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+
+/* Mobile/Small ( <1100px ): hide left/right groups; show centered row under title */
+@media (max-width: 1100px) {
+  .about-page .top-left-links,
+  .about-page .top-right-icons { display: none; }
+
+  .about-page .top-banner {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .about-page .page-title {
+    margin: 0 0 .8rem 0;
+    font-size: clamp(1.7rem, 4.5vw, 2.2rem);
+  }
+  .about-page .top-links-row {
+    display: flex;
+    gap: .8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  .about-page .top-links-row .banner-link {
+    font-size: 1rem;
+    padding: .45rem .9rem;
+    border-radius: 6px;
+    background: rgba(255,255,255,.10);
+    color: #ffd9c2;
+    text-decoration: none;
+    transition: all .25s ease;
+  }
+  .about-page .top-links-row .banner-link:hover {
+    background: rgba(255,140,0,.18);
+    box-shadow: 0 0 10px rgba(255,140,0,.45);
+  }
+}
 @media (max-width: 600px) {
   .about-page .top-links-row .banner-link {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.7rem;
+    font-size: .9rem;
+    padding: .4rem .7rem;
   }
 }
