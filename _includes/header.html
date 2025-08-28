@@ -15,7 +15,7 @@
   {% if is_post %}
     <!-- LEFT on post pages -->
     <div class="top-left-links">
-      <a href="{{ '/blog/' | relative_url }}" class="banner-link">← Back to Blog</a>
+      <a href="{{ '/blog/' | relative_url }}" class="banner-link back-link">← Back to Blog</a>
     </div>
   {% endif %}
 
@@ -26,8 +26,8 @@
     </div>
   {% endif %}
 
-  <!-- Centered title -->
-  <h1 class="page-title">{{ page.title | default: site.title | default: 'Ashes & Ink' }}</h1>
+  <!-- Centered title (always Ashes & Ink) -->
+  <h1 class="page-title">Ashes &amp; Ink</h1>
 
   {%- comment -%}
     Mobile:
@@ -35,7 +35,7 @@
   {%- endcomment -%}
   <nav class="top-links-row">
     {% if is_post %}
-      <a href="{{ '/blog/' | relative_url }}" class="banner-link">← Back to Blog</a>
+      <a href="{{ '/blog/' | relative_url }}" class="banner-link back-link">← Back to Blog</a>
     {% elsif is_blog_index %}
       <a href="{{ '/' | relative_url }}" class="banner-link">🌙 Return Home</a>
     {% endif %}
