@@ -11,12 +11,7 @@
   <meta property="og:image" content="https://raw.githubusercontent.com/jmccann917/Jamiemccann/main/MainSharePreview.png" />
   <meta property="og:url" content="https://jmccann917.github.io/Jamiemccann/about.html" />
   <meta property="og:type" content="website" />
-
-  <!-- Twitter card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="About Jamie McCann" />
-  <meta name="twitter:description" content="Get to know the voice behind the shadows and the fire — Jamie McCann." />
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/jmccann917/Jamiemccann/main/MainSharePreview.png" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
@@ -26,21 +21,35 @@
 </head>
 
 <body class="about-page">
-  <!-- Background fog (optional visual layer used on your site) -->
+  <!-- Optional fog layer -->
   <div class="fog-overlay"></div>
 
-  <!-- Top banner: Title first, links row below -->
-  <div class="top-banner">
-    <h1 class="page-title">About Me</h1>
-    <div class="top-links-row">
+  <!-- Banner -->
+  <header class="top-banner">
+    <!-- LEFT (desktop/tablet) -->
+    <div class="top-left-links">
       <a href="index.html" class="banner-link">🌙 Return Home</a>
+    </div>
+
+    <!-- CENTER title -->
+    <h1 class="page-title">About Me</h1>
+
+    <!-- RIGHT (desktop/tablet) -->
+    <div class="top-right-icons">
       <a href="https://www.facebook.com/JamieMcCannAuthor/" target="_blank" class="banner-link">📘 Facebook</a>
       <a href="https://www.tiktok.com/@jamie.mccann.auth?_t=ZT-8zEDVW9DKDm&_r=1" target="_blank" class="banner-link">🎵 TikTok</a>
     </div>
-  </div>
 
-  <!-- About content -->
-  <section class="about-container">
+    <!-- MOBILE ROW (hidden on desktop/tablet) -->
+    <nav class="top-links-row">
+      <a href="index.html" class="banner-link">🌙 Return Home</a>
+      <a href="https://www.facebook.com/JamieMcCannAuthor/" target="_blank" class="banner-link">📘 Facebook</a>
+      <a href="https://www.tiktok.com/@jamie.mccann.auth?_t=ZT-8zEDVW9DKDm&_r=1" target="_blank" class="banner-link">🎵 TikTok</a>
+    </nav>
+  </header>
+
+  <!-- Content -->
+  <main class="about-container">
     <img src="Author_Photo.jpg" alt="Photo of Jamie McCann" class="author-photo" />
     <div class="about-text">
       <p>Fueled by coffee, chaos, and a heart that beats for stories that ache, I write romance on the dark side—where love is messy, characters are haunted, and happily-ever-afters are earned through fire.</p>
@@ -50,6 +59,6 @@
       <p>My stories are dark, emotional, and tangled with suspense. They’re about resilience, survival, and finding beauty in the broken. About the kind of love that doesn’t run from darkness—but walks straight into it, willingly.</p>
       <p>When I’m not writing, I’m tangled in the beautiful chaos of family life, singing way too passionately to songs that understand me, and dreaming up the next story that’ll break your heart—before piecing it back together again.</p>
     </div>
-  </section>
+  </main>
 </body>
 </html>
