@@ -55,20 +55,27 @@ a[href$="feed.xml"], a[href$="feed.xml"]::before {
 /* =========================
    Pill Link Styles
    ========================= */
-.banner-link {
-  color: #EECFFB;
+.banner-link,
+.back-link {
+  color: #FFE6FF; /* brighter pastel pinkish-white */
+  font-weight: 600;
   font-family: 'Cinzel Decorative', serif;
   font-size: 1.05rem;
   text-decoration: none;
-  background: rgba(255,255,255,0.1);
-  padding: 0.4rem 0.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.45rem 0.9rem;
   border-radius: 6px;
   transition: all .25s ease;
-  box-shadow: 0 0 5px rgba(200,162,200,.3);
+  box-shadow: 0 0 6px rgba(200,162,200,.35);
+  text-shadow: 0 0 6px rgba(0,0,0,0.9), 0 0 10px rgba(200,162,200,.4);
 }
-.banner-link:hover {
-  background: rgba(200,162,200,0.2);
-  box-shadow: 0 0 10px rgba(255,182,193,.45);
+
+.banner-link:hover,
+.back-link:hover {
+  background: rgba(200,162,200,0.25);
+  box-shadow: 0 0 12px rgba(255,182,193,.6);
+  color: #FFFFFF; /* pure white glow on hover */
+  text-shadow: 0 0 8px rgba(255,182,193,.85), 0 0 14px rgba(200,162,200,.75);
 }
 
 /* Placement desktop/tablet */
