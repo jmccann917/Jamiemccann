@@ -26,7 +26,7 @@ body {
   padding: 0;
 }
 
-/* Hide Jekyll feed & default “older posts” para */
+/* Hide Jekyll feed & default “older posts” p */
 a[href$="feed.xml"], a[href$="feed.xml"]::before { display: none; }
 .post-list + p { display: none; }
 
@@ -45,20 +45,19 @@ a[href$="feed.xml"], a[href$="feed.xml"]::before { display: none; }
   border-bottom: 1px solid rgba(255,255,255,0.10);
 }
 
-/* If your header keeps page.title, this styles it.
-   If you hard-code “Ashes & Ink”, it applies too. */
+/* Banner title (keep CSS generic; header.html sets text to “Ashes & Ink”) */
 .page-title {
   margin: 0;
   font-family: 'Cinzel Decorative', serif;
   color: #C8A2C8;
   text-shadow: 0 0 6px rgba(0,0,0,0.6);
-  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
   line-height: 1.2;
   white-space: nowrap;
   text-align: center;
 }
 
-/* Place the right/left pills */
+/* Desktop/Tablet pill placements */
 .top-left-links,
 .top-right-icons {
   position: absolute;
@@ -68,54 +67,56 @@ a[href$="feed.xml"], a[href$="feed.xml"]::before { display: none; }
 .top-left-links  { left: 1rem;  }
 .top-right-icons { right: 1rem; }
 
-/* Pills (Return Home / Back to Blog)
-   — darker pill stays; brighter text for readability */
+/* Mobile row hidden by default (appears under title on phones) */
+.top-links-row { display: none; }
+
+/* =========================
+   Pill Link Styles (default)
+   ========================= */
 .banner-link,
 .back-link {
-  color: #FFF2FF;                    /* brighter text */
+  color: #EECFFB;                         /* light lilac (readable) */
   font-weight: 600;
   font-family: 'Cinzel Decorative', serif;
   font-size: 1.05rem;
   text-decoration: none;
-  background: rgba(255,255,255,0.10);/* keep darker pill background */
+  background: rgba(255,255,255,0.10);     /* keep darker pill */
   padding: .45rem .9rem;
   border-radius: 6px;
   transition: all .25s ease;
   box-shadow: 0 0 6px rgba(200,162,200,.35);
-  text-shadow: 0 0 6px rgba(0,0,0,.9), 0 0 10px rgba(200,162,200,.4);
+  text-shadow: 0 0 6px rgba(0,0,0,.7);
 }
 .banner-link:hover,
 .back-link:hover {
   background: rgba(200,162,200,0.25);
   box-shadow: 0 0 12px rgba(255,182,193,.6);
   color: #FFFFFF;
-  text-shadow: 0 0 8px rgba(255,182,193,.85), 0 0 14px rgba(200,162,200,.75);
+  text-shadow: 0 0 8px rgba(255,182,193,.85),
+               0 0 14px rgba(200,162,200,.75);
 }
 
-/* Mobile row hidden by default – shows under the title on phones */
-.top-links-row { display: none; }
-
 /* =========================
-   Main “card” wrapper
+   Main “card” wrapper (content)
    ========================= */
 main.wrapper {
   flex: 1 0 auto;
   max-width: 1000px;
-  margin: 3rem auto;                 /* general spacing from banner */
+  margin: 3rem auto;                       /* spacing from banner */
   padding: 2rem;
-  background: rgba(24, 17, 37, 0.85);/* readable dark card */
+  background: rgba(24, 17, 37, 0.85);      /* readable dark card */
   border-radius: 16px;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-/* Post-page: add a bit more breathing room under banner */
+/* Post pages: a touch more breathing room under banner */
 .top-banner + main.wrapper { margin-top: 2.75rem; }
 
-/* First heading inside content shouldn’t jam under the top edge */
+/* First heading inside card shouldn’t jam under top edge */
 main.wrapper h1:first-child,
 main.wrapper h2:first-child { margin-top: .35rem; }
 
-/* Intro line on blog index (optional) */
+/* Optional intro on blog index */
 .blog-intro {
   font-size: 2rem;
   font-weight: 700;
@@ -148,14 +149,16 @@ a:hover { color: #FFD1F9; }
 }
 
 /* =========================
-   Blog & Post header behavior
+   Blog/Post header sizing flags
    ========================= */
 .blog-page .page-title,
 .post-page .page-title {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
 }
 
-/* Phones: pills drop under title, centered */
+/* =========================
+   Mobile header behavior (<900px)
+   ========================= */
 @media (max-width: 900px) {
   .top-left-links, .top-right-icons { display: none; }
 
@@ -168,6 +171,7 @@ a:hover { color: #FFD1F9; }
     font-size: clamp(1.6rem, 5vw, 2.1rem);
     text-align: center;
   }
+
   .top-links-row {
     display: flex;
     gap: .8rem;
@@ -175,15 +179,16 @@ a:hover { color: #FFD1F9; }
     justify-content: center;
     width: 100%;
   }
-  .top-links-row .banner-link {
+  .top-links-row .banner-link,
+  .top-links-row .back-link {
     font-size: 1rem;
     padding: .45rem .9rem;
     border-radius: 6px;
     background: rgba(255,255,255,.10);
-    color: #ffd9c2;
-    transition: all .25s ease;
+    color: #EECFFB;                        /* keep lilac on mobile too */
   }
-  .top-links-row .banner-link:hover {
+  .top-links-row .banner-link:hover,
+  .top-links-row .back-link:hover {
     background: rgba(255,140,0,.18);
     box-shadow: 0 0 10px rgba(255,140,0,.45);
   }
@@ -227,6 +232,30 @@ a:hover { color: #FFD1F9; }
 }
 
 /* =========================
+   Single post content card
+   ========================= */
+.post-container {
+  max-width: 820px;
+  margin: 2rem auto 3.5rem;
+  padding: 1.5rem 1.25rem;
+  background: rgba(0,0,0,.65);
+  border: 1px solid rgba(186,85,211,.45);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.45);
+}
+.post-container .meta {
+  color: #cbb6d8;
+  font-size: .95rem;
+  margin: .5rem 0 1rem 0;
+}
+.post-container p {
+  margin: 1rem 0;
+  color: #f3e7df;
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+/* =========================
    Footer
    ========================= */
 .site-footer {
@@ -240,5 +269,25 @@ a:hover { color: #FFD1F9; }
   margin-top: auto;
 }
 
-/* Remove theme <hr> lines that sometimes show */
+/* Remove stray theme <hr> lines */
 .wrapper > hr, main.wrapper > hr, .page > hr { display: none; }
+
+/* =========================
+   FINAL OVERRIDES (win all)
+   ========================= */
+.top-banner a.banner-link,
+.top-banner a.banner-link:link,
+.top-banner a.banner-link:visited,
+.top-banner a.back-link,
+.top-banner a.back-link:link,
+.top-banner a.back-link:visited {
+  color: #EECFFB !important;              /* enforce lilac */
+  text-shadow: 0 0 6px rgba(0,0,0,.7);
+  font-weight: 600;
+}
+.top-banner a.banner-link:hover,
+.top-banner a.back-link:hover {
+  color: #FFFFFF !important;
+  text-shadow: 0 0 8px rgba(255,182,193,.85),
+               0 0 14px rgba(200,162,200,.75);
+}
