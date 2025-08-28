@@ -187,28 +187,3 @@ body {
   line-height: 1.75;
   font-size: 1.05rem;
 }
-
-/* Brightened Blog Header Links */
-.banner-link,
-.back-link {
-  color: #F6E6FF; /* brighter lilac */
-  font-weight: 600;
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 1.05rem;
-  text-decoration: none;
-  background: rgba(255,255,255,0.10);
-  padding: .45rem .9rem;
-  border-radius: 6px;
-  transition: all .25s ease;
-  box-shadow: 0 0 6px rgba(200,162,200,.35);
-  text-shadow: 0 0 6px rgba(0,0,0,.7);
-}
-
-.banner-link:hover,
-.back-link:hover {
-  background: rgba(200,162,200,0.25);
-  box-shadow: 0 0 12px rgba(255,182,193,.6);
-  color: #FFFFFF;
-  text-shadow: 0 0 8px rgba(255,182,193,.85),
-               0 0 14px rgba(200,162,200,.75);
-}
