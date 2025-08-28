@@ -134,3 +134,169 @@ a:hover {
   font-size: 1.3rem;
   color: #f7f0ff;
 }
+
+/* =========================
+   Banner + Link “pill” style
+   ========================= */
+
+.top-banner {
+  position: relative;
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: .6rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-title {
+  margin: 0;
+  font-family: 'Cinzel Decorative', serif;
+  color: #C8A2C8;
+  text-shadow: 0 0 6px rgba(0,0,0,.6);
+  font-size: clamp(1.2rem, 2.4vw, 1.9rem);
+  line-height: 1.2;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.banner-link {
+  color: #EECFFB;
+  text-decoration: none;
+  font-size: .95rem;
+  font-family: 'Cinzel Decorative', serif;
+  background: rgba(255,255,255,0.1);
+  padding: .38rem .75rem;
+  border-radius: 6px;
+  transition: all .25s ease;
+  box-shadow: 0 0 5px rgba(200,162,200,.3);
+}
+.banner-link:hover {
+  background: rgba(200,162,200,.2);
+  box-shadow: 0 0 8px rgba(255,182,193,.4);
+}
+
+/* Positioners for desktop/tablet */
+.top-right-icons,
+.top-left-links {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.top-right-icons { right: 1rem; }
+.top-left-links  { left: 1rem; }
+
+/* Mobile row hidden by default */
+.top-links-row { display: none; }
+
+/* =========================
+   Blog & Post header behavior
+   ========================= */
+
+/* Desktop/Tablet (≥ 900px) */
+.blog-page .page-title,
+.post-page .page-title { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+
+/* Mobile (< 900px): hide side pills, show centered row under title */
+@media (max-width: 900px) {
+  .top-right-icons, .top-left-links { display: none; }
+
+  .top-banner {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .page-title { margin: 0 0 .8rem 0; font-size: clamp(1.6rem, 5vw, 2.1rem); }
+
+  .top-links-row {
+    display: flex;
+    gap: .8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  .top-links-row .banner-link {
+    font-size: 1rem;
+    padding: .45rem .9rem;
+    border-radius: 6px;
+    background: rgba(255,255,255,.10);
+    color: #ffd9c2;
+    transition: all .25s ease;
+  }
+  .top-links-row .banner-link:hover {
+    background: rgba(255,140,0,.18);
+    box-shadow: 0 0 10px rgba(255,140,0,.45);
+  }
+}
+
+/* =========================
+   Blog list grid + cards
+   ========================= */
+
+.blog-list {
+  max-width: 980px;
+  margin: 2rem auto 3.5rem;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.post-card {
+  background: rgba(0,0,0,.65);
+  border: 1px solid rgba(186,85,211,.45);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,.45);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.post-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.55);
+}
+.post-card h2 {
+  margin: .25rem 0 .25rem;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.35rem;
+}
+.post-card h2 a { color: #EECFFB; text-decoration: none; }
+.post-card h2 a:hover { text-decoration: underline; }
+.post-card .meta { color: #cbb6d8; font-size: .95rem; margin-bottom: .4rem; }
+.post-card .excerpt { color: #f0e8f6; margin: 0 0 .6rem; }
+.post-card .read-more {
+  color: #EECFFB; text-decoration: none;
+  border-bottom: 1px dashed rgba(238,207,251,.6);
+}
+.post-card .read-more:hover { border-bottom-style: solid; }
+
+/* Stack cards on phones */
+@media (max-width: 780px) {
+  .blog-list { grid-template-columns: 1fr; }
+}
+
+/* =========================
+   Single post body
+   ========================= */
+
+.post-container {
+  max-width: 820px;
+  margin: 2rem auto 3.5rem;
+  padding: 0 1rem;
+  background: rgba(0,0,0,.65);
+  border: 1px solid rgba(186,85,211,.45);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.45);
+}
+.post-container .meta {
+  color: #cbb6d8;
+  font-size: .95rem;
+  margin: 1rem 1rem 0;
+}
+.post-container p {
+  margin: 1rem;
+  color: #f3e7df;
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
