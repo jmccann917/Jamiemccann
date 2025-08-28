@@ -1,7 +1,43 @@
-<!-- 🖤 Blog Top Banner -->
-<div class="top-banner">
-  <div class="top-left-links">
-    <a href="/" class="banner-link">🌙 Return Home</a>
-  </div>
-  <h1 class="page-title">Ashes & Ink</h1>
+<!-- 🖤 Top Banner used on all pages -->
+{%- assign is_post = page.collection == 'posts' or page.path contains '_posts/' -%}
+{%- assign is_blog_index = page.is_blog_index -%}
+
+<div class="top-banner
+            {% if is_blog_index %}blog-page{% endif %}
+            {% if is_post %}post-page{% endif %}">
+  
+  {%- comment -%}
+    Desktop/Tablet:
+      - Blog index → Return Home on RIGHT
+      - Single post → Back to Blog on LEFT
+  {%- endcomment -%}
+
+  {% if is_post %}
+    <!-- LEFT on post pages -->
+    <div class="top-left-links">
+      <a href="{{ '/blog/' | relative_url }}" class="banner-link">← Back to Blog</a>
+    </div>
+  {% endif %}
+
+  {% if is_blog_index %}
+    <!-- RIGHT on blog index -->
+    <div class="top-right-icons">
+      <a href="{{ '/' | relative_url }}" class="banner-link">🌙 Return Home</a>
+    </div>
+  {% endif %}
+
+  <!-- Centered title -->
+  <h1 class="page-title">{{ page.title | default: site.title | default: 'Ashes & Ink' }}</h1>
+
+  {%- comment -%}
+    Mobile:
+      - Buttons drop into a centered row under the title
+  {%- endcomment -%}
+  <nav class="top-links-row">
+    {% if is_post %}
+      <a href="{{ '/blog/' | relative_url }}" class="banner-link">← Back to Blog</a>
+    {% elsif is_blog_index %}
+      <a href="{{ '/' | relative_url }}" class="banner-link">🌙 Return Home</a>
+    {% endif %}
+  </nav>
 </div>
