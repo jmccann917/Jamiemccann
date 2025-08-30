@@ -345,4 +345,22 @@ body {
     font-size: .9rem;
     padding: .4rem .7rem;
   }
+	/* === About page responsive photo fix === */
+.author-photo {
+  display: block;
+  width: clamp(240px, 52vw, 520px); /* responsive width */
+  height: auto !important;         /* keep real aspect ratio */
+  max-width: 92vw;                 /* never overflow the viewport */
+  border-radius: 10px;
+  margin: 0 auto;                  /* nicely centered inside the box */
+  object-fit: contain;             /* in case a height sneaks in somewhere */
+}
+
+/* Make the text box a bit softer on phones */
+@media (max-width: 768px) {
+  .about-text-box {
+    margin: 1rem;
+    padding: 1rem 1.25rem;
+  }
+  .about-text-box p { font-size: 1.05rem; line-height: 1.7; }
 }
