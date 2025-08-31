@@ -11,24 +11,21 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== Top Banner Layout (About Me + others) ===== */
-.top-banner {
+/* =========================================================
+   ABOUT PAGE TOP BANNER (scoped so other pages are untouched)
+   ========================================================= */
+.about-page .top-banner {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* pushes left + right apart */
+  justify-content: space-between;            /* pushes left + right apart */
   padding: 0.5rem 1rem;
   background: rgba(0, 0, 0, 0.7);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Left side (Return Home) */
-.top-left-links {
-  flex: 1;
-  text-align: left;
-}
+.about-page .top-left-links { flex: 1; text-align: left; }
 
-/* Center Title */
-.page-title {
+.about-page .page-title {
   flex: 1;
   text-align: center;
   font-size: 1.6rem;
@@ -38,24 +35,46 @@ body {
   text-shadow: 0 0 6px rgba(0,0,0,.6);
 }
 
-/* Right side (Social icons) */
-.top-right-icons {
-  flex: 1;
-  text-align: right;
-}
+.about-page .top-right-icons { flex: 1; text-align: right; }
 
 /* Make sure links look consistent */
-.banner-link {
+.about-page .banner-link {
   font-size: 1rem;
   color: #E7D2FF;
   text-decoration: none;
   padding: 0.3rem 0.6rem;
 }
-.banner-link:hover {
-  color: #fff;
+.about-page .banner-link:hover { color: #fff; }
+
+/* Desktop/Tablet: never show the stacked row */
+.top-links-row { display: none; }
+
+/* Phone: show centered row and hide side pills (About page only) */
+@media (max-width: 900px) {
+  .about-page .top-left-links,
+  .about-page .top-right-icons { display: none; }
+
+  .about-page .top-banner {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .about-page .page-title {
+    margin: 0 0 .8rem 0;
+    font-size: clamp(1.4rem, 5vw, 2rem);
+  }
+  .about-page .top-links-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 6px;
+  }
 }
 
-/* ===== Tablet defaults (site-wide) ===== */
+/* ===== Tablet defaults (site-wide – unchanged) ===== */
 @media (max-width: 1100px) {
   .banner-left, .banner-right { display: none; }
   .mobile-links {
@@ -69,18 +88,6 @@ body {
   .page-title {
     font-size: clamp(1.3rem, 4.2vw, 1.7rem);
     white-space: normal;
-  }
-}
-
-/* Show the small-screen row nav only on phones */
-@media (max-width: 900px) {
-  .top-links-row{
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-top: 6px;
   }
 }
 
@@ -173,10 +180,10 @@ body {
   font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
-/* Background panel */
+/* Background panel behind the form */
 .newsletter-panel {
   margin: 1.2rem auto 0;
-  max-width: 850px; /* pulled in a little so form doesn’t span too wide */
+  max-width: 830px;           /* not full-bleed; looks balanced */
   padding: 1.25rem 1rem;
   background: rgba(10,6,18,.82);
   border: 1px solid rgba(186,85,211,.45);
@@ -184,12 +191,8 @@ body {
   box-shadow: 0 12px 30px rgba(0,0,0,.45);
 }
 
-/* ConvertKit form sizing */
-.formkit-form[data-uid="dcde57bea6"] {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 650px; /* reduce width of inputs */
-}
+/* ConvertKit form sizing (keep slim + centered) */
+.formkit-form[data-uid="dcde57bea6"] { margin: 0 auto; width: 100%; max-width: 620px; }
 .formkit-form[data-uid="dcde57bea6"] .formkit-fields {
   display: grid !important;
   grid-template-columns: 1fr;
@@ -197,27 +200,25 @@ body {
 }
 .formkit-form[data-uid="dcde57bea6"] .formkit-input {
   font-size: 1rem !important;
-  padding: 0.6rem 1rem !important; /* slim height */
+  padding: 0.6rem 1rem !important;
   min-height: 38px !important;
   border-radius: 8px !important;
   width: 100% !important;
-  max-width: 500px; /* prevents them from stretching too long */
-  margin: 0 auto; /* center them */
+  max-width: 480px;           /* keeps inputs from getting too long */
+  margin: 0 auto;             /* center them */
 }
 .formkit-form[data-uid="dcde57bea6"] .formkit-submit {
   font-family: 'Cinzel Decorative', serif !important;
   font-size: 1rem !important;
-  padding: 0.55rem 2.5rem !important; /* longer horizontally */
+  padding: 0.55rem 2.5rem !important;
   border-radius: 8px !important;
   background: linear-gradient(180deg, #bf8ee0, #a96ed6) !important;
   box-shadow: 0 6px 18px rgba(175, 120, 220, .35) !important;
-  width: auto !important;
+  width: auto !important;     /* not full width */
   display: inline-block !important;
   margin: 0 auto !important;
 }
-.formkit-form[data-uid="dcde57bea6"] .formkit-powered-by-convertkit-container {
-  margin-top: .6rem !important;
-}
+.formkit-form[data-uid="dcde57bea6"] .formkit-powered-by-convertkit-container { margin-top: .6rem !important; }
 
 /* ========== About page layout ========== */
 .about-page .about-container{
