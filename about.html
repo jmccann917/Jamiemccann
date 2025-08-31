@@ -18,6 +18,27 @@
 
   <!-- Site CSS -->
   <link rel="stylesheet" href="mainpage.css" />
+
+  <!-- ✅ Page-scoped fix: prevent duplicate links on desktop, show row on phones -->
+  <style>
+    /* Hide the mobile row by default only on this page */
+    .about-page .top-links-row { display: none; }
+
+    /* On phones, hide the side pills and show the centered row */
+    @media (max-width: 900px) {
+      .about-page .top-left-links,
+      .about-page .top-right-icons { display: none; }
+
+      .about-page .top-links-row {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 6px;
+      }
+    }
+  </style>
 </head>
 
 <body class="about-page">
@@ -41,7 +62,7 @@
     </div>
 
     <!-- MOBILE ROW (hidden on desktop/tablet) -->
-    <nav class="top-links-row">
+    <nav class="top-links-row" aria-label="Mobile navigation">
       <a href="index.html" class="banner-link">🌙 Return Home</a>
       <a href="https://www.facebook.com/JamieMcCannAuthor/" target="_blank" class="banner-link">📘 Facebook</a>
       <a href="https://www.tiktok.com/@jamie.mccann.auth?_t=ZT-8zEDVW9DKDm&_r=1" target="_blank" class="banner-link">🎵 TikTok</a>
