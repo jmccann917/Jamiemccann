@@ -199,7 +199,7 @@ body {
 .formkit-form[data-uid="dcde57bea6"] {
   margin: 0 auto;
   width: 100%;
-  max-width: 760px; /* keep wide enough */
+  max-width: 660px; /* keep wide enough */
 }
 .formkit-form[data-uid="dcde57bea6"] .formkit-fields {
   display: grid !important;
@@ -216,7 +216,7 @@ body {
 .formkit-form[data-uid="dcde57bea6"] .formkit-submit {
   font-family: 'Cinzel Decorative', serif !important;
   font-size: 1rem !important;
-  padding: 0.55rem 1.25rem !important; /* slimmer button */
+  padding: 1.55rem 1.25rem !important; /* slimmer button */
   border-radius: 8px !important;
   background: linear-gradient(180deg, #bf8ee0, #a96ed6) !important;
   box-shadow: 0 6px 18px rgba(175, 120, 220, .35) !important;
