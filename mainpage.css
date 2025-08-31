@@ -159,8 +159,7 @@ body {
 }
 
 /* ========== Newsletter (inline, bottom of index) ========== */
-/* Full-width dark band like the top banner */
-.newsletter-footer{
+.newsletter-footer {
   position: relative;
   z-index: 1;
   margin: 0;
@@ -171,24 +170,24 @@ body {
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-.newsletter-footer h2{
+.newsletter-footer h2 {
   margin: 0 0 .6rem;
   font-family: 'Cinzel Decorative', serif;
   font-size: clamp(1.8rem, 3.6vw, 2.6rem);
   color: #E7D2FF;
   text-shadow: 0 0 8px rgba(0,0,0,.55);
 }
-.newsletter-tagline{
+.newsletter-tagline {
   margin: 0 auto 1.1rem;
   max-width: 1100px;
   color: #EDE0FF;
   font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
-/* Content panel slightly narrower (tidy fit) */
-.newsletter-panel{
+/* Background panel */
+.newsletter-panel {
   margin: 1.2rem auto 0;
-  max-width: 940px;            /* ↓ a tad narrower */
+  max-width: 920px; /* slightly smaller */
   padding: 1.25rem 1rem;
   background: rgba(10,6,18,.82);
   border: 1px solid rgba(186,85,211,.45);
@@ -196,32 +195,36 @@ body {
   box-shadow: 0 12px 30px rgba(0,0,0,.45);
 }
 
-/* Make ConvertKit (Kit) form a bit larger */
-.formkit-form[data-uid="dcde57bea6"]{
+/* ConvertKit form sizing */
+.formkit-form[data-uid="dcde57bea6"] {
   margin: 0 auto;
   width: 100%;
-  max-width: 700px;            /* ↑ a tad wider */
+  max-width: 760px; /* keep wide enough */
 }
-.formkit-form[data-uid="dcde57bea6"] .formkit-fields{
+.formkit-form[data-uid="dcde57bea6"] .formkit-fields {
   display: grid !important;
   grid-template-columns: 1fr;
-  gap: .85rem;                 /* ↑ a touch more space */
+  gap: .65rem; /* compact spacing */
 }
-.formkit-form[data-uid="dcde57bea6"] .formkit-input{
-  font-size: 1.15rem !important;        /* ↑ larger text */
-  padding: 1.00rem 1.1rem !important;   /* ↑ taller inputs */
-  min-height: 52px !important;
-  border-radius: 10px !important;
+.formkit-form[data-uid="dcde57bea6"] .formkit-input {
+  font-size: 1rem !important;
+  padding: 0.6rem 1rem !important; /* thinner height */
+  min-height: 38px !important; /* slim height */
+  border-radius: 8px !important;
+  width: 100% !important;
 }
-.formkit-form[data-uid="dcde57bea6"] .formkit-submit{
+.formkit-form[data-uid="dcde57bea6"] .formkit-submit {
   font-family: 'Cinzel Decorative', serif !important;
-  font-size: 1.05rem !important;
-  padding: .8rem 1.25rem !important;
-  border-radius: 10px !important;
+  font-size: 1rem !important;
+  padding: 0.55rem 1.25rem !important; /* slimmer button */
+  border-radius: 8px !important;
   background: linear-gradient(180deg, #bf8ee0, #a96ed6) !important;
   box-shadow: 0 6px 18px rgba(175, 120, 220, .35) !important;
+  width: auto !important; /* keeps it only as wide as text */
+  display: inline-block !important;
+  margin: 0 auto !important;
 }
-.formkit-form[data-uid="dcde57bea6"] .formkit-powered-by-convertkit-container{
+.formkit-form[data-uid="dcde57bea6"] .formkit-powered-by-convertkit-container {
   margin-top: .4rem !important;
 }
 
