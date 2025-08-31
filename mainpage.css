@@ -11,70 +11,62 @@ body {
   overflow-x: hidden;
 }
 
-/* =========================================================
-   ABOUT PAGE TOP BANNER (scoped so other pages are untouched)
-   ========================================================= */
-.about-page .top-banner {
+/* ===== Top Banner (site-wide default) ===== */
+.top-banner {
+  position: relative;
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;            /* pushes left + right apart */
-  padding: 0.5rem 1rem;
-  background: rgba(0, 0, 0, 0.7);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  justify-content: center; /* center title on desktop */
 }
 
-.about-page .top-left-links { flex: 1; text-align: left; }
-
-.about-page .page-title {
-  flex: 1;
-  text-align: center;
-  font-size: 1.6rem;
-  font-family: 'Cinzel Decorative', serif;
-  color: #E7D2FF;
+.page-title {
   margin: 0;
-  text-shadow: 0 0 6px rgba(0,0,0,.6);
+  font-family: 'Cinzel Decorative', serif;
+  color: #C8A2C8;
+  text-shadow: 0 0 6px rgba(0,0,0,0.6);
+  font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+  line-height: 1.2;
+  white-space: nowrap;
+  text-align: center;
 }
 
-.about-page .top-right-icons { flex: 1; text-align: right; }
-
-/* Make sure links look consistent */
-.about-page .banner-link {
-  font-size: 1rem;
-  color: #E7D2FF;
+/* Default header pill positions (hard-left / hard-right) */
+.banner-left {
+  position: absolute;
+  left: .75rem;       /* tighter to the edge */
+  top: 50%;
+  transform: translateY(-50%);
+}
+.banner-right {
+  position: absolute;
+  right: .75rem;      /* tighter to the edge */
+  top: 50%;
+  transform: translateY(-50%);
+}
+.banner-link {
+  color: #EECFFB;
   text-decoration: none;
-  padding: 0.3rem 0.6rem;
+  font-size: 0.95rem;
+  font-family: 'Cinzel Decorative', serif;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(200,162,200,0.3);
 }
-.about-page .banner-link:hover { color: #fff; }
+.banner-link:hover {
+  background: rgba(200,162,200,0.2);
+  box-shadow: 0 0 8px rgba(255,182,193,0.4);
+}
 
-/* Desktop/Tablet: never show the stacked row */
+/* Hide the mobile row by default (prevents duplicates on desktop) */
+.mobile-links,
 .top-links-row { display: none; }
 
-/* Phone: show centered row and hide side pills (About page only) */
-@media (max-width: 900px) {
-  .about-page .top-left-links,
-  .about-page .top-right-icons { display: none; }
-
-  .about-page .top-banner {
-    padding: 1rem;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .about-page .page-title {
-    margin: 0 0 .8rem 0;
-    font-size: clamp(1.4rem, 5vw, 2rem);
-  }
-  .about-page .top-links-row {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-top: 6px;
-  }
-}
-
-/* ===== Tablet defaults (site-wide – unchanged) ===== */
+/* ===== Tablet defaults (site-wide) ===== */
 @media (max-width: 1100px) {
   .banner-left, .banner-right { display: none; }
   .mobile-links {
@@ -88,6 +80,18 @@ body {
   .page-title {
     font-size: clamp(1.3rem, 4.2vw, 1.7rem);
     white-space: normal;
+  }
+}
+
+/* Show the small-screen row nav only on phones */
+@media (max-width: 900px) {
+  .top-links-row{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 6px;
   }
 }
 
@@ -180,10 +184,10 @@ body {
   font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
-/* Background panel behind the form */
+/* Background panel */
 .newsletter-panel {
   margin: 1.2rem auto 0;
-  max-width: 830px;           /* not full-bleed; looks balanced */
+  max-width: 850px; /* pulled in a little so form doesn’t span too wide */
   padding: 1.25rem 1rem;
   background: rgba(10,6,18,.82);
   border: 1px solid rgba(186,85,211,.45);
@@ -191,8 +195,12 @@ body {
   box-shadow: 0 12px 30px rgba(0,0,0,.45);
 }
 
-/* ConvertKit form sizing (keep slim + centered) */
-.formkit-form[data-uid="dcde57bea6"] { margin: 0 auto; width: 100%; max-width: 620px; }
+/* ConvertKit form sizing */
+.formkit-form[data-uid="dcde57bea6"] {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 650px; /* reduce width of inputs */
+}
 .formkit-form[data-uid="dcde57bea6"] .formkit-fields {
   display: grid !important;
   grid-template-columns: 1fr;
@@ -200,25 +208,27 @@ body {
 }
 .formkit-form[data-uid="dcde57bea6"] .formkit-input {
   font-size: 1rem !important;
-  padding: 0.6rem 1rem !important;
+  padding: 0.6rem 1rem !important; /* slim height */
   min-height: 38px !important;
   border-radius: 8px !important;
   width: 100% !important;
-  max-width: 480px;           /* keeps inputs from getting too long */
-  margin: 0 auto;             /* center them */
+  max-width: 500px; /* prevents them from stretching too long */
+  margin: 0 auto; /* center them */
 }
 .formkit-form[data-uid="dcde57bea6"] .formkit-submit {
   font-family: 'Cinzel Decorative', serif !important;
   font-size: 1rem !important;
-  padding: 0.55rem 2.5rem !important;
+  padding: 0.55rem 2.5rem !important; /* longer horizontally */
   border-radius: 8px !important;
   background: linear-gradient(180deg, #bf8ee0, #a96ed6) !important;
   box-shadow: 0 6px 18px rgba(175, 120, 220, .35) !important;
-  width: auto !important;     /* not full width */
+  width: auto !important;
   display: inline-block !important;
   margin: 0 auto !important;
 }
-.formkit-form[data-uid="dcde57bea6"] .formkit-powered-by-convertkit-container { margin-top: .6rem !important; }
+.formkit-form[data-uid="dcde57bea6"] .formkit-powered-by-convertkit-container {
+  margin-top: .6rem !important;
+}
 
 /* ========== About page layout ========== */
 .about-page .about-container{
