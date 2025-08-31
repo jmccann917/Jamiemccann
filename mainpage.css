@@ -144,120 +144,93 @@ body {
   line-height: 1.4;
 }
 
-/* ===== Newsletter Footer ===== */
-.newsletter-footer {
-  background: rgba(0, 0, 0, 0.72);
-  padding: 3rem 1.5rem;
-  margin-top: 3rem;
-  border-top: 2px solid rgba(200, 162, 200, 0.3);
-  text-align: center;
-}
-.newsletter-footer h2,
-.newsletter-heading {
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 2rem;
-  color: #C8A2C8;
-  margin-bottom: 0.75rem;
-}
-
-/* Glow link style (kept for consistency, not used) */
-.linklike {
-  background: none;
-  border: none;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-  padding: 0;
-}
-.glow-link {
-  text-shadow: 0 0 6px rgba(200,162,200,0.35);
-  transition: text-shadow 0.25s ease, transform 0.25s ease;
-}
-.glow-link:hover,
-.glow-link:focus {
-  text-shadow: 0 0 10px rgba(255,182,193,0.65), 0 0 18px rgba(186,85,211,0.55);
-  transform: translateY(-1px);
-  outline: none;
-}
-
-/* Newsletter tagline wrapping */
-.newsletter-tagline {
-  font-size: 1.1rem;
-  color: #EDEDED;
-  margin: 0 auto 1rem;
-  max-width: 1200px;
-  line-height: 1.6;
-  text-align: center;
-}
-@media (min-width: 1000px) { .newsletter-tagline { white-space: nowrap; } }
-@media (max-width: 999px)  { .newsletter-tagline { white-space: normal; } }
-
-/* Inline newsletter form wrapper (keeps right edge aligned) */
-.newsletter-embed {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1.5rem 1.25rem;
-  border: 2px solid rgba(200,162,200,0.35);
-  border-radius: 14px;
-  background: rgba(15,10,25,0.72);
-}
-
-/* Make the embedded Kit fields match your theme a bit more */
-.formkit-form[data-uid="dcde57bea6"] .formkit-input {
-  color: #0b0b0f;
-  border-color: #e3e3e3;
-  border-radius: 10px;
-  font-weight: 400;
-  padding: 14px;
-}
-.formkit-form[data-uid="dcde57bea6"] .formkit-submit {
-  background-color: #c675db;
-  border-radius: 10px;
-  color: #fff;
-  font-weight: 600;
-  padding: 12px 24px;
-}
-.formkit-form[data-uid="dcde57bea6"] .formkit-submit:hover {
-  filter: brightness(1.08);
-}
-
-/* ---------- About Page layout (unchanged from your working setup) ---------- */
-.about-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 2rem auto 3.5rem;
+/* ========== Newsletter (inline, bottom of index) ========== */
+/* Section title + tagline you already have */
+.newsletter-footer{
+  position: relative;
+  z-index: 1;
+  margin: 3rem auto 4rem;
   padding: 0 1rem;
+  text-align: center;
 }
-.author-photo {
-  width: 320px;
+.newsletter-footer h2{
+  margin: 0 0 .6rem;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  color: #E7D2FF;
+  text-shadow: 0 0 8px rgba(0,0,0,.55);
+}
+.newsletter-tagline{
+  margin: 0 auto 1.1rem;
+  max-width: 1100px;
+  color: #EDE0FF;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+/* Panel hugs content instead of spanning super wide */
+.newsletter-panel{
+  margin: 1.2rem auto 0;
+  max-width: 980px;            /* <- tighter */
+  padding: 1.25rem 1rem;
+  background: rgba(10,6,18,.82);
+  border: 1px solid rgba(186,85,211,.45);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.45);
+}
+
+/* Make ConvertKit (Kit) form larger & comfy */
+.formkit-form[data-uid="dcde57bea6"]{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 780px;            /* <- bigger fields */
+}
+.formkit-form[data-uid="dcde57bea6"] .formkit-fields{
+  display: grid !important;
+  grid-template-columns: 1fr;
+  gap: .75rem;
+}
+.formkit-form[data-uid="dcde57bea6"] .formkit-input{
+  font-size: 1.05rem !important;
+  padding: .9rem 1rem !important;
+  border-radius: 10px !important;
+}
+.formkit-form[data-uid="dcde57bea6"] .formkit-submit{
+  font-family: 'Cinzel Decorative', serif !important;
+  font-size: 1rem !important;
+  padding: .7rem 1.25rem !important;
+  border-radius: 10px !important;
+  background: linear-gradient(180deg, #bf8ee0, #a96ed6) !important;
+  box-shadow: 0 6px 18px rgba(175, 120, 220, .35) !important;
+}
+.formkit-form[data-uid="dcde57bea6"] .formkit-powered-by-convertkit-container{
+  margin-top: .4rem !important;
+}
+
+/* ========== About page layout ========== */
+.about-page .about-container{
+  position: relative;
+  z-index: 1; /* above fog */
+  max-width: 1200px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 1.5rem;
+}
+.author-photo{
+  width: 100%; height: auto;
   border-radius: 10px;
   border: 2px solid #000;
-  box-shadow: 0 8px 20px rgba(0,0,0,.6);
+  box-shadow: 0 12px 30px rgba(0,0,0,.5);
+  object-fit: cover;
 }
-.about-text {
-  flex: 1;
-  max-width: 780px;
-  font-size: 1.15rem;
-  line-height: 1.75;
-  color: #f3e7df;
-  background: rgba(0, 0, 0, 0.65);
-  border: 1px solid rgba(186,85,211,0.45);
+.about-text{
+  background: rgba(10, 6, 18, .82);
+  border: 1px solid rgba(186,85,211,.45);
   border-radius: 12px;
-  padding: 1.25rem 1.5rem;
-  box-shadow: 0 0 15px rgba(186,85,211,0.3);
-  animation: borderPulse 4s ease-in-out infinite;
+  box-shadow: 0 10px 25px rgba(0,0,0,.45);
+  padding: 1.25rem 1.35rem;
+  color: #F3E7DF;
+  font-size: 1.08rem;
+  line-height: 1.8;
 }
-@keyframes borderPulse {
-  0%,100% { box-shadow: 0 0 15px rgba(186,85,211,0.30); }
-  50%     { box-shadow: 0 0 25px rgba(186,85,211,0.60); }
-}
-@media (max-width: 900px) {
-  .about-container { flex-direction: column; align-items: center; text-align: center; }
-  .author-photo { width: 72%; max-width: 340px; }
-  .about-text   { text-align: left; margin-top: 1rem; max-width: 90vw; }
-}
-
-/* (Old popup modal styles left out on purpose) */
