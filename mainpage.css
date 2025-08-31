@@ -21,7 +21,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Optional soft fog layer */
+/* soft fog highlight */
 .fog-overlay {
   position: fixed;
   inset: 0;
@@ -84,7 +84,7 @@ body {
   box-shadow: 0 0 12px rgba(255, 182, 193, 0.55);
 }
 
-/* Mobile row (hidden by default) */
+/* hide by default; appears under title on small screens */
 .mobile-links { display: none; }
 
 /* =========================
@@ -132,13 +132,13 @@ main {
 /* Coming soon card (same footprint as covers) */
 .coming-soon-card .cs-card {
   width: 300px;
-  min-height: 450px;     /* visually matches your cover card height */
+  min-height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  background: #1c1124;   /* plain background */
+  background: #1c1124;
   box-shadow: 0 10px 25px rgba(0,0,0,0.55);
   padding: 1rem;
   text-align: center;
@@ -160,10 +160,10 @@ main {
 }
 
 /* =========================
-   Newsletter Footer + Modal
+   Newsletter Footer (inline ConvertKit)
    ========================= */
 .newsletter-footer {
-  background: rgba(0, 0, 0, 0.72);
+  background: rgba(0,0,0,0.72);
   padding: 3rem 1.5rem;
   margin-top: 3rem;
   border-top: 2px solid rgba(200, 162, 200, 0.3);
@@ -177,103 +177,51 @@ main {
   margin: 0 0 0.75rem 0;
 }
 
-.linklike {
-  background: none;
-  border: none;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-  padding: 0;
-}
-
-.glow-link {
-  text-shadow: 0 0 6px rgba(200,162,200,0.35);
-  transition: text-shadow 0.25s ease, transform 0.25s ease;
-}
-
-.glow-link:hover,
-.glow-link:focus {
-  text-shadow: 0 0 10px rgba(255,182,193,0.65), 0 0 18px rgba(186,85,211,0.55);
-  transform: translateY(-1px);
-  outline: none;
-}
-
-/* Keep tagline one line on desktop, wrap on smaller screens */
-.newsletter-tagline {
+.newsletter-footer .newsletter-tagline {
   font-size: 1.1rem;
   color: #EDEDED;
-  margin: 0 auto;
-  max-width: 1200px;
+  margin: 0 auto 1.25rem;
+  max-width: 800px;
   line-height: 1.6;
-  text-align: center;
-}
-@media (min-width: 1000px) { .newsletter-tagline { white-space: nowrap; } }
-@media (max-width: 999px)  { .newsletter-tagline { white-space: normal; } }
-
-/* Modal overlay & panel */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-  backdrop-filter: blur(2px);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  z-index: 1000;
-}
-.modal-overlay[aria-hidden="false"] { display: flex; }
-
-.modal {
-  position: relative;
-  width: min(760px, 96vw);
-  background: rgba(15, 10, 25, 0.96);
-  border: 1px solid rgba(200,162,200,0.35);
-  border-radius: 14px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.6), 0 0 30px rgba(255,105,180,0.25);
-  padding: 1rem 1rem 1.25rem;
 }
 
-.modal-title {
-  margin: 0 2rem 0.85rem 0.25rem;
+/* ConvertKit form gets injected; style typical fields */
+.newsletter-footer form {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.newsletter-footer input[type="email"] {
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid rgba(200,162,200,0.4);
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 0.75rem;
+  background: rgba(255,255,255,0.95);
+  color: #2b1a32;
+}
+
+.newsletter-footer button {
+  background: #C8A2C8;
+  color: #fff;
   font-family: 'Cinzel Decorative', serif;
-  color: #EECFFB;
-}
-
-.modal-close {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  background: rgba(255,255,255,0.12);
+  padding: 0.6rem 1.2rem;
   border: none;
-  color: #EECFFB;
-  font-size: 1.6rem;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ConvertKit target & loader while script initializes */
-.kit-target { 
-  min-height: 360px; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
+.newsletter-footer button:hover {
+  background: #B07EB0;
+  box-shadow: 0 0 10px rgba(200,162,200,0.6);
 }
-.kit-loading {
-  font-family: 'Cinzel Decorative', serif;
-  color: #EECFFB;
-  opacity: .85;
-  letter-spacing: .5px;
-}
-
-.modal-fallback { text-align: center; margin-top: 0.75rem; }
-.modal-fallback a { color: #D8B4F8; }
 
 /* =========================
    Responsive
    ========================= */
 @media (max-width: 1100px) {
-  /* Hide side pills; use a row under the title */
   .banner-left, .banner-right { display: none; }
   .mobile-links {
     display: flex;
