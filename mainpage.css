@@ -33,7 +33,7 @@ body {
   text-align: center;
 }
 
-/* Default header pill positions (home page etc.) */
+/* Default header pill positions */
 .banner-left {
   position: absolute;
   left: 1rem;
@@ -62,8 +62,9 @@ body {
   box-shadow: 0 0 8px rgba(255,182,193,0.4);
 }
 
-/* Mobile row hidden by default */
-.mobile-links { display: none; }
+/* Hide the mobile row by default (prevents duplicates on desktop) */
+.mobile-links,
+.top-links-row { display: none; }
 
 /* ===== Tablet defaults (site-wide) ===== */
 @media (max-width: 1100px) {
@@ -81,6 +82,19 @@ body {
     white-space: normal;
   }
 }
+
+/* Show the small-screen row nav only on phones */
+@media (max-width: 900px) {
+  .top-links-row{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 6px;
+  }
+}
+
 @media (max-width: 600px) {
   .mobile-links { flex-direction: column; align-items: center; gap: 8px; }
   .banner-link { font-size: 0.9rem; padding: 0.4rem 0.6rem; }
@@ -145,14 +159,19 @@ body {
 }
 
 /* ========== Newsletter (inline, bottom of index) ========== */
-/* Section title + tagline you already have */
+/* Now a full-width dark band, like the top banner */
 .newsletter-footer{
   position: relative;
   z-index: 1;
-  margin: 3rem auto 4rem;
-  padding: 0 1rem;
+  margin: 0;                 /* let it stretch full width */
+  padding: 2.25rem 1rem 2.75rem;
   text-align: center;
+
+  background: rgba(0,0,0,0.70);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
+
 .newsletter-footer h2{
   margin: 0 0 .6rem;
   font-family: 'Cinzel Decorative', serif;
@@ -167,10 +186,10 @@ body {
   font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
-/* Panel hugs content instead of spanning super wide */
+/* Content panel stays tidy inside the band */
 .newsletter-panel{
   margin: 1.2rem auto 0;
-  max-width: 980px;            /* <- tighter */
+  max-width: 980px;
   padding: 1.25rem 1rem;
   background: rgba(10,6,18,.82);
   border: 1px solid rgba(186,85,211,.45);
@@ -182,7 +201,7 @@ body {
 .formkit-form[data-uid="dcde57bea6"]{
   margin: 0 auto;
   width: 100%;
-  max-width: 780px;            /* <- bigger fields */
+  max-width: 780px;
 }
 .formkit-form[data-uid="dcde57bea6"] .formkit-fields{
   display: grid !important;
@@ -209,7 +228,7 @@ body {
 /* ========== About page layout ========== */
 .about-page .about-container{
   position: relative;
-  z-index: 1; /* above fog */
+  z-index: 1;
   max-width: 1200px;
   margin: 2.5rem auto;
   padding: 0 1rem;
