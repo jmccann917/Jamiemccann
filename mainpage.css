@@ -185,24 +185,31 @@ main {
   line-height: 1.6;
 }
 
-/* ConvertKit form gets injected; style typical fields */
-.newsletter-footer form {
-  max-width: 480px;
+/* Let the ConvertKit form look native on your site */
+.newsletter-footer .formkit-form {
+  max-width: 520px;
   margin: 0 auto;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(186,85,211,0.35);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.35);
 }
 
-.newsletter-footer input[type="email"] {
+.newsletter-footer .formkit-field { margin: 0 0 0.75rem 0; }
+
+.newsletter-footer .formkit-input[type="email"],
+.newsletter-footer .formkit-input[type="text"] {
   padding: 0.6rem 0.8rem;
   font-size: 1rem;
   border: 1px solid rgba(200,162,200,0.4);
   border-radius: 6px;
   width: 100%;
-  margin-bottom: 0.75rem;
-  background: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.96);
   color: #2b1a32;
 }
 
-.newsletter-footer button {
+.newsletter-footer .formkit-submit {
   background: #C8A2C8;
   color: #fff;
   font-family: 'Cinzel Decorative', serif;
@@ -213,9 +220,13 @@ main {
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.newsletter-footer button:hover {
+.newsletter-footer .formkit-submit:hover {
   background: #B07EB0;
   box-shadow: 0 0 10px rgba(200,162,200,0.6);
+}
+
+.newsletter-footer .formkit-powered-by-convertkit-container {
+  margin-top: 0.25rem;
 }
 
 /* =========================
