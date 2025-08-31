@@ -33,16 +33,16 @@ body {
   text-align: center;
 }
 
-/* Default header pill positions */
+/* Default header pill positions (hard-left / hard-right) */
 .banner-left {
   position: absolute;
-  left: 1rem;
+  left: .75rem;       /* tighter to the edge */
   top: 50%;
   transform: translateY(-50%);
 }
 .banner-right {
   position: absolute;
-  right: 1rem;
+  right: .75rem;      /* tighter to the edge */
   top: 50%;
   transform: translateY(-50%);
 }
@@ -159,14 +159,13 @@ body {
 }
 
 /* ========== Newsletter (inline, bottom of index) ========== */
-/* Now a full-width dark band, like the top banner */
+/* Full-width dark band like the top banner */
 .newsletter-footer{
   position: relative;
   z-index: 1;
-  margin: 0;                 /* let it stretch full width */
+  margin: 0;
   padding: 2.25rem 1rem 2.75rem;
   text-align: center;
-
   background: rgba(0,0,0,0.70);
   border-top: 1px solid rgba(255,255,255,0.08);
   border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -186,10 +185,10 @@ body {
   font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
-/* Content panel stays tidy inside the band */
+/* Content panel slightly narrower (tidy fit) */
 .newsletter-panel{
   margin: 1.2rem auto 0;
-  max-width: 980px;
+  max-width: 940px;            /* ↓ a tad narrower */
   padding: 1.25rem 1rem;
   background: rgba(10,6,18,.82);
   border: 1px solid rgba(186,85,211,.45);
@@ -197,26 +196,27 @@ body {
   box-shadow: 0 12px 30px rgba(0,0,0,.45);
 }
 
-/* Make ConvertKit (Kit) form larger & comfy */
+/* Make ConvertKit (Kit) form a bit larger */
 .formkit-form[data-uid="dcde57bea6"]{
   margin: 0 auto;
   width: 100%;
-  max-width: 780px;
+  max-width: 840px;            /* ↑ a tad wider */
 }
 .formkit-form[data-uid="dcde57bea6"] .formkit-fields{
   display: grid !important;
   grid-template-columns: 1fr;
-  gap: .75rem;
+  gap: .85rem;                 /* ↑ a touch more space */
 }
 .formkit-form[data-uid="dcde57bea6"] .formkit-input{
-  font-size: 1.05rem !important;
-  padding: .9rem 1rem !important;
+  font-size: 1.15rem !important;        /* ↑ larger text */
+  padding: 1.05rem 1.1rem !important;   /* ↑ taller inputs */
+  min-height: 52px !important;
   border-radius: 10px !important;
 }
 .formkit-form[data-uid="dcde57bea6"] .formkit-submit{
   font-family: 'Cinzel Decorative', serif !important;
-  font-size: 1rem !important;
-  padding: .7rem 1.25rem !important;
+  font-size: 1.05rem !important;
+  padding: .8rem 1.25rem !important;
   border-radius: 10px !important;
   background: linear-gradient(180deg, #bf8ee0, #a96ed6) !important;
   box-shadow: 0 6px 18px rgba(175, 120, 220, .35) !important;
