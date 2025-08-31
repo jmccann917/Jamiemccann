@@ -2,40 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jamie McCann | Official Author Site</title>
-  <meta name="description" content="Step into the shadows and find the fire — emotional, haunting, and unforgettable love stories by Jamie McCann.">
-  <meta name="keywords" content="dark romance, fantasy romance, emotional love stories, haunting romance, Jamie McCann, Twin Flame, fantasy author">
 
-  <!-- Social Preview -->
+  <!-- Social preview -->
+  <meta name="description" content="Step into the shadows and find the fire — emotional, haunting, and unforgettable love stories by Jamie McCann.">
   <meta property="og:title" content="Jamie McCann | Official Author Site" />
   <meta property="og:description" content="Step into the shadows and find the fire — emotional, haunting, and unforgettable love stories by Jamie McCann." />
   <meta property="og:image" content="https://raw.githubusercontent.com/jmccann917/Jamiemccann/main/MainSharePreview.png" />
-  <meta property="og:url" content="https://jmccann917.github.io/Jamiemccann/index.html" />
   <meta property="og:type" content="website" />
-
-  <!-- Twitter Card -->
+  <meta property="og:url" content="https://jamiemccann.com/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Jamie McCann | Official Author Site" />
-  <meta name="twitter:description" content="Step into the shadows and find the fire — emotional, haunting, and unforgettable love stories by Jamie McCann." />
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/jmccann917/Jamiemccann/main/MainSharePreview.png" />
 
   <!-- Fonts & CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="mainpage.css">
 </head>
 <body>
 
-  <!-- Optional fog overlay -->
+  <!-- soft fog effect -->
   <div class="fog-overlay"></div>
 
-  <!-- Top Banner -->
+  <!-- Top banner -->
   <header class="top-banner">
     <a href="https://jamiemccann.com/blog" class="banner-link banner-left">🌙 Read My Blog</a>
     <h1 class="page-title">Jamie McCann | Official Author Site</h1>
     <a href="about.html" class="banner-link banner-right">✨ About Me</a>
 
-    <!-- Mobile row -->
+    <!-- mobile row (shown on small screens) -->
     <nav class="mobile-links">
       <a href="https://jamiemccann.com/blog" class="banner-link">🌙 Read My Blog</a>
       <a href="about.html" class="banner-link">✨ About Me</a>
@@ -47,11 +41,11 @@
     <div class="works-links">
       <!-- Twin Flame -->
       <a href="twinflame.html" class="work-card">
-        <img src="Twin_Flame_Cover.png" alt="Twin Flame Cover">
+        <img src="Twin_Flame_Cover.png" alt="Twin Flame book cover">
         <span>Twin Flame</span>
       </a>
 
-      <!-- Coming Soon -->
+      <!-- Coming soon -->
       <a href="#newsletter" class="work-card coming-soon-card">
         <div class="cs-card">
           <h3>New Book Coming Soon</h3>
@@ -60,113 +54,24 @@
         <span>Coming Soon</span>
       </a>
 
-      <!-- Hidden future title -->
-      <a href="moonbound.html" class="work-card" style="display: none;">
-        <img src="moonboundcover.png" alt="Moonbound Cover">
+      <!-- Hidden future title (keep for later) -->
+      <a href="moonbound.html" class="work-card" style="display:none">
+        <img src="moonboundcover.png" alt="Moonbound book cover">
         <span>Moonbound</span>
       </a>
     </div>
   </main>
 
-  <!-- Newsletter Footer -->
+  <!-- Inline newsletter section (embedded ConvertKit) -->
   <footer id="newsletter" class="newsletter-footer">
-    <h2>
-      <button id="openNewsletter" class="linklike glow-link">
-        🔥 Subscribe to My Newsletter 🔥
-      </button>
-    </h2>
+    <h2>🔥 Subscribe to My Newsletter 🔥</h2>
     <p class="newsletter-tagline">
       Step into the fire — get exclusive updates, sneak peeks, and dark romance secrets before anyone else.
     </p>
+
+    <!-- Official ConvertKit embed (inline, no popup) -->
+    <script async data-uid="dcde57bea6" src="https://jamiemccann.kit.com/dcde57bea6/index.js"></script>
   </footer>
-
-  <!-- Modal -->
-  <div id="newsletterModal" class="modal-overlay" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="newsletterTitle">
-      <button class="modal-close" id="closeNewsletter" aria-label="Close newsletter form">×</button>
-      <h3 id="newsletterTitle" class="modal-title">Join the List</h3>
-
-      <!-- Kit embed target. We inject the official script here on demand -->
-      <div id="kitTarget" class="kit-target">
-        <div class="kit-loading">Loading form…</div>
-      </div>
-
-      <p class="modal-fallback">
-        Having trouble? <a href="https://jamiemccann.kit.com/dcde57bea6" target="_blank" rel="noopener">Open the signup form in a new tab</a>.
-      </p>
-    </div>
-  </div>
-
-  <!-- Modal + Auto-Open + ConvertKit lazy embed -->
-  <script>
-    (function () {
-      const modal       = document.getElementById('newsletterModal');
-      const opener      = document.getElementById('openNewsletter');
-      const closeBtn    = document.getElementById('closeNewsletter');
-      const kitTarget   = document.getElementById('kitTarget');
-      const STORAGE_KEY = 'newsletterShown';
-      const KIT_UID     = 'dcde57bea6';
-      const KIT_SRC     = `https://jamiemccann.kit.com/${KIT_UID}/index.js`;
-
-      let kitInjected = false;
-
-      function injectKit() {
-        return new Promise((resolve, reject) => {
-          if (kitInjected) return resolve();
-          const s = document.createElement('script');
-          s.async = true;
-          s.dataset.uid = KIT_UID;            // REQUIRED by Kit
-          s.src = KIT_SRC;                    // REQUIRED by Kit
-          s.onload = () => { kitInjected = true; resolve(); };
-          s.onerror = reject;
-          // Insert the script where the form should render:
-          kitTarget.appendChild(s);
-        });
-      }
-
-      function openModal() {
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeModal() {
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-        try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch(e){}
-      }
-
-      // Click to open
-      opener.addEventListener('click', async () => {
-        openModal();
-        try { await injectKit(); } catch(e){}
-      });
-
-      // Close interactions
-      closeBtn.addEventListener('click', closeModal);
-      modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-
-      // Auto-open once per session with Kit preloaded
-      try {
-        const already = sessionStorage.getItem(STORAGE_KEY) === '1';
-        if (!already) {
-          setTimeout(async () => {
-            if (modal.getAttribute('aria-hidden') !== 'false') {
-              openModal();
-              try { await injectKit(); } catch(e){}
-              sessionStorage.setItem(STORAGE_KEY, '1');
-            }
-          }, 6000); // modest delay so the script is very likely cached/ready
-        }
-      } catch(e) {
-        // Private mode fallback
-        setTimeout(async () => {
-          openModal();
-          try { await injectKit(); } catch(e){}
-        }, 6000);
-      }
-    })();
-  </script>
 
 </body>
 </html>
