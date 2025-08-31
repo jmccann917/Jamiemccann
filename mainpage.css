@@ -200,7 +200,7 @@ body {
 .formkit-form[data-uid="dcde57bea6"]{
   margin: 0 auto;
   width: 100%;
-  max-width: 840px;            /* ↑ a tad wider */
+  max-width: 700px;            /* ↑ a tad wider */
 }
 .formkit-form[data-uid="dcde57bea6"] .formkit-fields{
   display: grid !important;
@@ -209,7 +209,7 @@ body {
 }
 .formkit-form[data-uid="dcde57bea6"] .formkit-input{
   font-size: 1.15rem !important;        /* ↑ larger text */
-  padding: 1.05rem 1.1rem !important;   /* ↑ taller inputs */
+  padding: 1.00rem 1.1rem !important;   /* ↑ taller inputs */
   min-height: 52px !important;
   border-radius: 10px !important;
 }
