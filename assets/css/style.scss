@@ -73,13 +73,6 @@ a[href$="feed.xml"], a[href$="feed.xml"]::before {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Stronger link color (theme-safe) */
-.top-banner a.banner-link,
-.top-banner a.banner-link:visited{
-  color: #EECFFB !important;
-  text-shadow: 0 0 6px rgba(0,0,0,0.55);
-}
-
 /* Page Content Box */
 main.wrapper {
   flex: 1 0 auto;
@@ -198,48 +191,6 @@ a:hover {
 .top-links-row { display: none; }
 
 /* =========================
-   Blog & Post header behavior
-   ========================= */
-
-/* Desktop/Tablet (≥ 900px) */
-.blog-page .page-title,
-.post-page .page-title { font-size: clamp(1.8rem, 3vw, 2.4rem); }
-
-/* Mobile (< 900px): hide side pills, show centered row under title */
-@media (max-width: 900px) {
-  .top-right-icons, .top-left-links { display: none; }
-
-  .top-banner {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .page-title { margin: 0 0 .8rem 0; font-size: clamp(1.6rem, 5vw, 2.1rem); }
-
-  .top-links-row {
-    display: flex;
-    gap: .8rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-  }
-  .top-links-row .banner-link {
-    font-size: 1rem;
-    padding: .45rem .9rem;
-    border-radius: 6px;
-    background: rgba(255,255,255,.10);
-    color: #ffd9c2;
-    transition: all .25s ease;
-  }
-  .top-links-row .banner-link:hover {
-    background: rgba(255,140,0,.18);
-    box-shadow: 0 0 10px rgba(255,140,0,.45);
-  }
-}
-
-/* =========================
    Blog list grid + cards
    ========================= */
 
@@ -279,11 +230,6 @@ a:hover {
 }
 .post-card .read-more:hover { border-bottom-style: solid; }
 
-/* Stack cards on phones */
-@media (max-width: 780px) {
-  .blog-list { grid-template-columns: 1fr; }
-}
-
 /* =========================
    Single post body
    ========================= */
@@ -309,41 +255,48 @@ a:hover {
   font-size: 1.05rem;
 }
 
-/* Force post list to 1 column on phones (overrides theme floats/columns) */
-@media (max-width: 700px){
-  ul.post-list{
-    display: block !important;
-    margin: 1.5rem 0 0 !important;
-    padding: 0 !important;
+/* =========================
+   Mobile RESCUE overrides
+   (this is the part that fixes your blog cards not stacking)
+   ========================= */
+
+@media (max-width: 900px) {
+  /* Force ONE column on phones even if the theme tries columns/floats */
+  .post-list, .posts, .posts-grid, .card-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    margin: .5rem 0 2rem !important;
+    padding: 0 .25rem !important;
+    column-count: 1 !important;
+    columns: 1 !important;
   }
-  ul.post-list > li{
-    float: none !important;
+
+  .post-list > li,
+  .posts > li,
+  .card, article.post-preview {
     width: 100% !important;
+    max-width: 100% !important;
+    float: none !important;
     display: block !important;
-    margin: 0 0 1rem !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    border-radius: 10px !important;
+    padding: .9rem 1rem !important;
+    background: rgba(0,0,0,.66);
+    border: 1px solid rgba(186,85,211,.45);
+    box-shadow: 0 10px 25px rgba(0,0,0,.45);
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
   }
-}
 
-/* Post page container background + spacing (so content isn't glued to the banner) */
-.post-page main.wrapper{
-  margin-top: 1.75rem;
-}
-.post-page article.post,
-.post-page .post,
-.post-page .post-content{
-  background: rgba(0,0,0,0.65);
-  border: 1px solid rgba(186,85,211,0.45);
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,.45);
-}
-
-/* Common Jekyll theme structures */
-.post-page article.post{
-  padding: 1.25rem 1.25rem 1.5rem;
-}
-.post-page .post-header{
-  padding-top: .25rem;
-}
-.post-page .post-title{
-  margin-top: .25rem;
+  .post-list h2, .post-list h3 {
+    font-size: 1.25rem !important;
+    margin: .2rem 0 .35rem !important;
+  }
+  .post-list .post-meta {
+    font-size: .95rem !important;
+    color: #cbb6d8 !important;
+    margin-bottom: .35rem !important;
+  }
 }
