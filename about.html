@@ -1,85 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Jamie McCann</title>
-
-  <!-- Social preview -->
-  <meta property="og:title" content="About Jamie McCann" />
-  <meta property="og:description" content="Get to know the voice behind the shadows and the fire — Jamie McCann." />
-  <meta property="og:image" content="https://raw.githubusercontent.com/jmccann917/Jamiemccann/main/MainSharePreview.png" />
-  <meta property="og:url" content="https://jmccann917.github.io/Jamiemccann/about.html" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
-
-  <!-- Site CSS -->
-  <link rel="stylesheet" href="mainpage.css" />
-
-  <!-- ✅ Page-scoped fix: prevent duplicate links on desktop, show row on phones -->
-  <style>
-    /* Hide the mobile row by default only on this page */
-    .about-page .top-links-row { display: none; }
-
-    /* On phones, hide the side pills and show the centered row */
-    @media (max-width: 900px) {
-      .about-page .top-left-links,
-      .about-page .top-right-icons { display: none; }
-
-      .about-page .top-links-row {
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        flex-wrap: wrap;
-        width: 100%;
-        margin-top: 6px;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Jamie McCann</title>
+  <link rel="stylesheet" href="mainpage.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body class="about-page">
-  <!-- Optional fog layer -->
-  <div class="fog-overlay"></div>
 
-  <!-- Banner -->
+  <!-- 🖤 Top Banner -->
   <header class="top-banner">
-    <!-- LEFT (desktop/tablet) -->
     <div class="top-left-links">
       <a href="index.html" class="banner-link">🌙 Return Home</a>
     </div>
 
-    <!-- CENTER title -->
     <h1 class="page-title">About Me</h1>
 
-    <!-- RIGHT (desktop/tablet) -->
     <div class="top-right-icons">
-      <a href="https://www.facebook.com/JamieMcCannAuthor/" target="_blank" class="banner-link">📘 Facebook</a>
-      <a href="https://www.tiktok.com/@jamie.mccann.auth?_t=ZT-8zEDVW9DKDm&_r=1" target="_blank" class="banner-link">🎵 TikTok</a>
+      <a href="https://www.facebook.com/JamieMcCannAuthor/" target="_blank" class="banner-link">Facebook</a>
+      <a href="https://www.tiktok.com/@jmccannauthor?_t=ZT-8zEDVW9DKDm&_r=1" target="_blank" class="banner-link">TikTok</a>
     </div>
 
-    <!-- MOBILE ROW (hidden on desktop/tablet) -->
-    <nav class="top-links-row" aria-label="Mobile navigation">
+    <!-- Mobile Links Row (only shows on small screens via CSS) -->
+    <div class="top-links-row">
       <a href="index.html" class="banner-link">🌙 Return Home</a>
-      <a href="https://www.facebook.com/JamieMcCannAuthor/" target="_blank" class="banner-link">📘 Facebook</a>
-      <a href="https://www.tiktok.com/@jamie.mccann.auth?_t=ZT-8zEDVW9DKDm&_r=1" target="_blank" class="banner-link">🎵 TikTok</a>
-    </nav>
+      <a href="https://www.facebook.com/JamieMcCannAuthor/" target="_blank" class="banner-link">Facebook</a>
+      <a href="https://www.tiktok.com/@jmccannauthor?_t=ZT-8zEDVW9DKDm&_r=1" target="_blank" class="banner-link">TikTok</a>
+    </div>
   </header>
 
-  <!-- Content -->
+  <!-- ✨ About Section -->
   <main class="about-container">
-    <img src="Author_Photo.jpg" alt="Photo of Jamie McCann" class="author-photo" />
-    <div class="about-text">
-      <p>Fueled by coffee, chaos, and a heart that beats for stories that ache, I write romance on the dark side—where love is messy, characters are haunted, and happily-ever-afters are earned through fire.</p>
-      <p>I’m a wife, a mom, and a full-time daydreamer who lives for those quiet moments when books feel like secrets and music says everything I cannot.</p>
-      <p><em>Twin Flame</em> was born from a single, haunting moment—a psychic once told me my husband was my twin flame, and that idea never let me go. It sank into my bones, twisted through every shadow I carry, and lit the spark for a story about a love so fierce it destroys and rebuilds.</p>
-      <p>Like the phoenix I’ve always loved, my characters rise from ruin—scarred, stronger, and unrelenting.</p>
-      <p>My stories are dark, emotional, and tangled with suspense. They’re about resilience, survival, and finding beauty in the broken. About the kind of love that doesn’t run from darkness—but walks straight into it, willingly.</p>
-      <p>When I’m not writing, I’m tangled in the beautiful chaos of family life, singing way too passionately to songs that understand me, and dreaming up the next story that’ll break your heart—before piecing it back together again.</p>
-    </div>
+    <img src="Author_Photo.jpg" alt="Jamie McCann Author Photo" class="author-photo">
+
+    <section class="about-text">
+      <p>
+        Hi, I’m Jamie McCann — author of dark romance and fantasy romance stories with bite.
+        I live in Ohio with my husband, two kids, and our cat Ella (who runs the house).
+      </p>
+
+      <p>
+        I write for the readers who want emotional intensity, slow-burn tension, and characters who feel like
+        they would burn the world down for each other. If that is your vibe…welcome.
+      </p>
+
+      <p>
+        Thank you for being here. 🖤
+      </p>
+    </section>
   </main>
+
 </body>
 </html>
