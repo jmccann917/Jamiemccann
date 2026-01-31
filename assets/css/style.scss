@@ -1,42 +1,156 @@
 ---
 ---
 
-/* =========================
-   Fonts & Theme Base
-   ========================= */
 @import "{{ site.theme }}";
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap');
 
+/* Font */
 @font-face {
   font-family: 'AppleGaramond';
   src: url('/assets/fonts/AppleGaramond.ttf') format('truetype');
 }
 
-/* Sticky footer base */
-html, body { height: 100%; }
+/* Sticky Footer Base Layout */
+html, body {
+  height: 100%;
+}
 
 body {
   display: flex;
   flex-direction: column;
   font-family: 'AppleGaramond', serif;
-  background: linear-gradient(rgba(45,30,70,.7), rgba(45,30,70,.7)), url('/assets/images/background.PNG') center/cover no-repeat fixed;
+  background: linear-gradient(rgba(45, 30, 70, 0.7), rgba(45, 30, 70, 0.7)), url('/assets/images/background.PNG') center/cover no-repeat fixed;
   color: #f0e6ff;
   margin: 0;
   padding: 0;
 }
 
-/* Hide GitHub Pages’ default feed link */
-a[href$="feed.xml"], a[href$="feed.xml"]::before { display: none !important; }
-/* Hide “Older/Newer” paragraph Minima sometimes injects after post list */
-.post-list + p { display: none !important; }
+/* Top Banner Styling */
+.top-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.page-title {
+  font-size: 2.2rem;
+  font-family: 'Cinzel Decorative', serif;
+  color: #C8A2C8;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+  margin: 0;
+}
+
+a[href$="feed.xml"], a[href$="feed.xml"]::before {
+  display: none;
+}
+
+.post-list + p {
+  display: none;
+}
+
+.top-left-links {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.banner-link {
+  color: #EECFFB;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.1rem;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
+
+.banner-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Stronger link color (theme-safe) */
+.top-banner a.banner-link,
+.top-banner a.banner-link:visited{
+  color: #EECFFB !important;
+  text-shadow: 0 0 6px rgba(0,0,0,0.55);
+}
+
+/* Page Content Box */
+main.wrapper {
+  flex: 1 0 auto;
+  max-width: 1000px; /* was 800px */
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: rgba(24, 17, 37, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.blog-intro {
+  font-size: 2.0rem;
+  font-weight: bold;
+  color: #D8B4F8;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'AppleGaramond', serif;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer Styling */
+.site-footer {
+  flex-shrink: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #EECFFB;
+  font-size: 1.0rem;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.4);
+  margin-top: auto;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  color: #D8B4F8;
+  text-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+
+/* Links */
+a {
+  color: #89D8FF;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #FFD1F9;
+}
+
+/* Blog post meta text */
+.post-meta {
+  color: #a987d1;
+  font-size: 0.9rem;
+}
+
+/* Post content styling */
+.post-content {
+  text-align: left;
+  line-height: 1.8;
+  font-size: 1.3rem;
+  color: #f7f0ff;
+}
 
 /* =========================
-   Top Banner / Header Pills
+   Banner + Link “pill” style
    ========================= */
+
 .top-banner {
   position: relative;
-  background: rgba(0,0,0,.7);
-  border-bottom: 1px solid rgba(255,255,255,.1);
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   padding: .6rem 1rem;
   display: flex;
   align-items: center;
@@ -54,7 +168,23 @@ a[href$="feed.xml"], a[href$="feed.xml"]::before { display: none !important; }
   text-align: center;
 }
 
-/* Side “pills” */
+.banner-link {
+  color: #EECFFB;
+  text-decoration: none;
+  font-size: .95rem;
+  font-family: 'Cinzel Decorative', serif;
+  background: rgba(255,255,255,0.1);
+  padding: .38rem .75rem;
+  border-radius: 6px;
+  transition: all .25s ease;
+  box-shadow: 0 0 5px rgba(200,162,200,.3);
+}
+.banner-link:hover {
+  background: rgba(200,162,200,.2);
+  box-shadow: 0 0 8px rgba(255,182,193,.4);
+}
+
+/* Positioners for desktop/tablet */
 .top-right-icons,
 .top-left-links {
   position: absolute;
@@ -64,109 +194,105 @@ a[href$="feed.xml"], a[href$="feed.xml"]::before { display: none !important; }
 .top-right-icons { right: 1rem; }
 .top-left-links  { left: 1rem; }
 
-.banner-link {
-  color: #F5E9FF;                 /* brighter for readability */
-  text-decoration: none;
-  font-size: .95rem;
-  font-family: 'Cinzel Decorative', serif;
-  background: rgba(255,255,255,.10);
-  padding: .38rem .75rem;
-  border-radius: 6px;
-  transition: all .25s ease;
-  box-shadow: 0 0 6px rgba(200,162,200,.35);
-}
-.banner-link:hover {
-  background: rgba(200,162,200,.22);
-  box-shadow: 0 0 12px rgba(255,182,193,.55);
-}
-
-/* Hidden by default; shown on phones */
+/* Mobile row hidden by default */
 .top-links-row { display: none; }
 
-/* Slightly larger title on blog index & post pages */
+/* =========================
+   Blog & Post header behavior
+   ========================= */
+
+/* Desktop/Tablet (≥ 900px) */
 .blog-page .page-title,
-.post-page .page-title { font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
+.post-page .page-title { font-size: clamp(1.8rem, 3vw, 2.4rem); }
 
-/* =========================
-   Main Content Wrapper
-   ========================= */
-main.wrapper {
-  flex: 1 0 auto;
-  max-width: 1000px;
-  margin: 2.2rem auto 3rem;
-  padding: 2rem 2rem 2.2rem;
-  background: rgba(24,17,37,.85);
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0,0,0,.5);
+/* Mobile (< 900px): hide side pills, show centered row under title */
+@media (max-width: 900px) {
+  .top-right-icons, .top-left-links { display: none; }
+
+  .top-banner {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .page-title { margin: 0 0 .8rem 0; font-size: clamp(1.6rem, 5vw, 2.1rem); }
+
+  .top-links-row {
+    display: flex;
+    gap: .8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  .top-links-row .banner-link {
+    font-size: 1rem;
+    padding: .45rem .9rem;
+    border-radius: 6px;
+    background: rgba(255,255,255,.10);
+    color: #ffd9c2;
+    transition: all .25s ease;
+  }
+  .top-links-row .banner-link:hover {
+    background: rgba(255,140,0,.18);
+    box-shadow: 0 0 10px rgba(255,140,0,.45);
+  }
 }
 
-/* Headings / links / meta */
-h1, h2, h3, h4 { color: #EBD5FF; text-shadow: 0 0 4px rgba(0,0,0,.5); }
-a { color: #89D8FF; transition: .25s; }
-a:hover { color: #FFD1F9; }
-.post-meta { color: #b99adc; font-size: .95rem; }
-
 /* =========================
-   Blog Index (cards/grid)
+   Blog list grid + cards
    ========================= */
 
-/* Intro line above cards (if you use it) */
-.blog-intro {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #D8B4F8;
-  text-align: center;
-  margin: 0 0 1.5rem;
-  font-family: 'AppleGaramond', serif;
-  text-shadow: 0 0 4px rgba(0,0,0,.5);
-}
-
-/* Custom grid version */
 .blog-list {
   max-width: 980px;
-  margin: 1.25rem auto 3rem;
+  margin: 2rem auto 3.5rem;
   padding: 0 1rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;   /* 2 columns on desktop */
+  grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
 }
 
-/* Card style (works for both custom & coerced defaults) */
 .post-card {
-  background: rgba(0,0,0,.66);
+  background: rgba(0,0,0,.65);
   border: 1px solid rgba(186,85,211,.45);
   border-radius: 12px;
   padding: 1rem 1.25rem;
   box-shadow: 0 10px 25px rgba(0,0,0,.45);
-  transition: transform .18s ease, box-shadow .18s ease;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 .post-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 14px 30px rgba(0,0,0,.55);
 }
 .post-card h2 {
-  margin: .25rem 0 .35rem;
+  margin: .25rem 0 .25rem;
   font-family: 'Cinzel Decorative', serif;
   font-size: 1.35rem;
 }
-.post-card h2 a { color: #F5E9FF; text-decoration: none; }
+.post-card h2 a { color: #EECFFB; text-decoration: none; }
 .post-card h2 a:hover { text-decoration: underline; }
 .post-card .meta { color: #cbb6d8; font-size: .95rem; margin-bottom: .4rem; }
 .post-card .excerpt { color: #f0e8f6; margin: 0 0 .6rem; }
 .post-card .read-more {
-  color: #F5E9FF; text-decoration: none;
+  color: #EECFFB; text-decoration: none;
   border-bottom: 1px dashed rgba(238,207,251,.6);
 }
 .post-card .read-more:hover { border-bottom-style: solid; }
 
+/* Stack cards on phones */
+@media (max-width: 780px) {
+  .blog-list { grid-template-columns: 1fr; }
+}
+
 /* =========================
-   Single Post
+   Single post body
    ========================= */
+
 .post-container {
   max-width: 820px;
   margin: 2rem auto 3.5rem;
-  padding: 0 1rem 1.25rem;
-  background: rgba(0,0,0,.66);
+  padding: 0 1rem;
+  background: rgba(0,0,0,.65);
   border: 1px solid rgba(186,85,211,.45);
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0,0,0,.45);
@@ -180,125 +306,44 @@ a:hover { color: #FFD1F9; }
   margin: 1rem;
   color: #f3e7df;
   line-height: 1.75;
-  font-size: 1.12rem;
+  font-size: 1.05rem;
 }
 
-/* =========================
-   Footer
-   ========================= */
-.site-footer {
-  flex-shrink: 0;
-  background: rgba(0,0,0,.6);
-  color: #EECFFB;
-  font-size: 1rem;
-  text-align: center;
-  padding: 1rem;
-  margin-top: auto;
-  box-shadow: 0 -2px 6px rgba(0,0,0,.4);
-}
-
-/* =========================
-   Mobile / Tablet polish
-   ========================= */
-@media (max-width: 900px) {
-  /* Move pills under the title & center them */
-  .top-right-icons, .top-left-links { display: none; }
-
-  .top-banner {
-    padding: .9rem .75rem .7rem;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+/* Force post list to 1 column on phones (overrides theme floats/columns) */
+@media (max-width: 700px){
+  ul.post-list{
+    display: block !important;
+    margin: 1.5rem 0 0 !important;
+    padding: 0 !important;
   }
-  .page-title {
-    margin: 0 0 .6rem;
-    font-size: clamp(1.5rem, 6.2vw, 2.1rem);
-    white-space: normal;
-  }
-  .top-links-row {
-    display: flex;
-    gap: .65rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-  }
-  .top-links-row .banner-link {
-    font-size: .95rem;
-    padding: .45rem .85rem;
-    border-radius: 6px;
-    background: rgba(255,255,255,.10);
-    color: #FBEFFF;
-  }
-
-  /* Softer wrapper on phones */
-  main.wrapper {
-    max-width: 680px;
-    margin: 1rem auto 2.2rem;
-    padding: 1.1rem 1rem 1.2rem;
-    background: rgba(24,17,37,.78);
-    border-radius: 14px;
-  }
-
-  .blog-intro {
-    font-size: clamp(1.1rem, 4.4vw, 1.35rem);
-    margin-bottom: 1rem;
-  }
-
-  /* Force single column for our grid */
-  .blog-list {
-    grid-template-columns: 1fr !important;
-    gap: 1rem !important;
-    margin: .5rem auto 2rem !important;
-    padding: 0 .25rem !important;
-    max-width: 640px !important;
-  }
-
-  .post-card { padding: .9rem 1rem; border-radius: 10px; }
-  .post-card h2 { font-size: 1.25rem; }
-
-  /* Single post body tweaks */
-  .post-container {
-    margin: 1rem auto 2.4rem;
-    padding: .75rem .75rem 1rem;
-    max-width: 680px;
-  }
-  .post-container p { font-size: 1.05rem; }
-}
-
-/* =========================
-   Mobile RESCUE overrides
-   (cover different index markups, e.g. Minima UL list)
-   ========================= */
-@media (max-width: 900px) {
-  /* If template renders a UL-based list */
-  .post-list, .posts, .posts-grid, .card-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 1rem !important;
-    margin: .5rem 0 2rem !important;
-    padding: 0 .25rem !important;
-  }
-
-  .post-list > li,
-  .posts > li,
-  .card, article.post-preview {
+  ul.post-list > li{
+    float: none !important;
     width: 100% !important;
-    box-sizing: border-box !important;
-    margin: 0 !important;
-    border-radius: 10px !important;
-    padding: .9rem 1rem !important;
-    background: rgba(0,0,0,.66);
-    border: 1px solid rgba(186,85,211,.45);
-    box-shadow: 0 10px 25px rgba(0,0,0,.45);
+    display: block !important;
+    margin: 0 0 1rem !important;
   }
+}
 
-  .post-list h2, .post-list h3 {
-    font-size: 1.25rem !important;
-    margin: .2rem 0 .35rem !important;
-  }
-  .post-list .post-meta {
-    font-size: .95rem !important;
-    color: #cbb6d8 !important;
-    margin-bottom: .35rem !important;
-  }
+/* Post page container background + spacing (so content isn't glued to the banner) */
+.post-page main.wrapper{
+  margin-top: 1.75rem;
+}
+.post-page article.post,
+.post-page .post,
+.post-page .post-content{
+  background: rgba(0,0,0,0.65);
+  border: 1px solid rgba(186,85,211,0.45);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.45);
+}
+
+/* Common Jekyll theme structures */
+.post-page article.post{
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+.post-page .post-header{
+  padding-top: .25rem;
+}
+.post-page .post-title{
+  margin-top: .25rem;
 }
