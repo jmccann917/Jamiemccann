@@ -3,7 +3,7 @@ title: "Title Reveal! 🌙✨"
 date: 2026-01-31
 ---
 
-Hi, reader friends 🖤  
+New book coming soon!! 🖤  
 
 This story is close. Like… actually close.
 
