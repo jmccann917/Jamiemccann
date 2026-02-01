@@ -261,7 +261,37 @@ a:hover {
    ========================= */
 
 @media (max-width: 900px) {
-  /* Force ONE column on phones even if the theme tries columns/floats */
+
+  /* ✅ FIX: stop Return Home from overlapping the title */
+  .page-title {
+    white-space: normal !important;   /* allows wrap */
+    padding: 0 0.25rem;
+    text-align: center;
+  }
+
+  /* Hide the absolutely-positioned left/right links on phones */
+  .top-left-links,
+  .top-right-icons {
+    display: none !important;
+  }
+
+  /* Show the clean mobile link row (if your header.html includes it) */
+  .top-links-row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    margin-top: 8px !important;
+  }
+
+  /* ✅ FIX: YOUR blog cards grid becomes one column on phones */
+  .blog-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Extra safety: if a theme outputs a different list container */
   .post-list, .posts, .posts-grid, .card-grid {
     display: flex !important;
     flex-direction: column !important;
