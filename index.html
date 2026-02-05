@@ -7,56 +7,102 @@
   <meta name="description" content="Step into the shadows and find the fire — emotional, haunting, and unforgettable love stories by Jamie McCann.">
   <meta name="keywords" content="dark romance, fantasy romance, emotional love stories, haunting romance, Jamie McCann, Twin Flame, fantasy author">
 
-  
-
-<!-- Favicons -->
-<link rel="icon" href="/assets/icons/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
-<!-- Social Preview -->
+  <!-- Social Preview -->
   <meta property="og:title" content="Jamie McCann | Official Author Site" />
   <meta property="og:description" content="Step into the shadows and find the fire — emotional, haunting, and unforgettable love stories by Jamie McCann." />
-  <meta property="og:image" content="https://jamiemccann.com/assets/images/og-main.png" />
-  <meta property="og:url" content="https://jamiemccann.com/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/jmccann917/Jamiemccann/main/MainSharePreview.png" />
+  <meta property="og:url" content="https://jmccann917.github.io/Jamiemccann/index.html" />
   <meta property="og:type" content="website" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Jamie McCann | Official Author Site" />
   <meta name="twitter:description" content="Step into the shadows and find the fire — emotional, haunting, and unforgettable love stories by Jamie McCann." />
-  <meta name="twitter:image" content="https://jamiemccann.com/assets/images/og-main.png" />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/jmccann917/Jamiemccann/main/MainSharePreview.png" />
 
-  <link rel="stylesheet" href="/assets/css/mainpage.css" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="mainpage.css">
+  <link rel="stylesheet" href="/assets/css/effects.css">
 </head>
 <body>
 
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">
-      <a href="/">Jamie McCann</a>
+  <!-- Floating embers -->
+  <div class="embers" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- Optional fog overlay -->
+  <div class="fog-overlay"></div>
+
+  <!-- Top Banner -->
+  <header class="top-banner">
+    <a href="https://jamiemccann.com/blog" class="banner-link banner-left">🌙 Read My Blog</a>
+    <h1 class="page-title">Jamie McCann | Official Author Site</h1>
+
+    <!-- Desktop right-side links (About + Links) -->
+    <div class="banner-right-links">
+      <a href="about.html" class="banner-link">✨ About Me</a>
+      <a href="links.html" class="banner-link">🔗 Links</a>
     </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/twinflame.html">Twin Flame</a></li>
-        <li><a href="/blog.html">Blog</a></li>
-        <li><a href="/links.html">All Links</a></li>
-      </ul>
+
+    <!-- Mobile row -->
+    <nav class="mobile-links">
+      <a href="https://jamiemccann.com/blog" class="banner-link">🌙 Read My Blog</a>
+      <a href="about.html" class="banner-link">✨ About Me</a>
+      <a href="links.html" class="banner-link">🔗 Links</a>
     </nav>
   </header>
 
-  <!-- Main Hero Section -->
-  <main class="hero">
-    <div class="hero-content">
-      <h1>Welcome to My World</h1>
-      <p>Dark romance, dark fantasy, and stories that burn.</p>
+  <!-- Main content -->
+  <main>
+    <div class="works-links">
+      <!-- Twin Flame -->
+      <a href="twinflame.html" class="work-card">
+        <img src="Twin_Flame_Cover.png" alt="Twin Flame Cover">
+        <span>Twin Flame</span>
+      </a>
 
-      <div class="hero-buttons">
-        <a class="btn" href="/twinflame.html">Explore Twin Flame</a>
-        <a class="btn alt" href="/links.html">All Links</a>
-      </div>
+      <!-- Coming Soon -->
+      <a href="#newsletter" class="work-card coming-soon-card">
+        <div class="cs-card">
+          <h3>Bound by the Hollow Coming Soon</h3>
+          <p>Subscribe for the cover reveal and exclusive sneak peeks!</p>
+        </div>
+        <span>Bound by the Hollow</span>
+      </a>
+
+      <!-- Moonbound (hidden) -->
+      <a href="moonbound.html" class="work-card" style="display: none;">
+        <img src="moonboundcover.png" alt="Moonbound Cover">
+        <span>Moonbound</span>
+      </a>
     </div>
   </main>
+
+  <!-- Newsletter Footer (INLINE FORM, no popup) -->
+  <footer id="newsletter" class="newsletter-footer">
+    <h2 class="newsletter-heading">🔥 Subscribe to My Newsletter 🔥</h2>
+    <p class="newsletter-tagline">
+      Step into the fire — get exclusive updates, sneak peeks, and dark romance secrets before anyone else.
+    </p>
+
+    <div class="newsletter-embed">
+      <div class="ml-embedded" data-form="himz7H"></div>
+    </div>
+  </footer>
+
+  <!-- MailerLite Universal -->
+  <script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2078380');
+  </script>
+  <!-- End MailerLite Universal -->
 
 </body>
 </html>
