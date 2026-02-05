@@ -1,0 +1,44 @@
+/* ===== Floating Embers (Global Effect) ===== */
+
+.embers{
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.embers span{
+  position: absolute;
+  bottom: -40px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,160,90,0.55);
+  opacity: 0;
+  animation: ember-rise 8s linear infinite;
+}
+
+.embers span:nth-child(1){ left:10%; animation-delay:0s; }
+.embers span:nth-child(2){ left:22%; animation-delay:1.4s; transform:scale(0.9); }
+.embers span:nth-child(3){ left:35%; animation-delay:2.2s; transform:scale(1.1); }
+.embers span:nth-child(4){ left:48%; animation-delay:0.8s; transform:scale(0.8); }
+.embers span:nth-child(5){ left:60%; animation-delay:3.0s; transform:scale(1.0); }
+.embers span:nth-child(6){ left:70%; animation-delay:1.9s; transform:scale(0.85); }
+.embers span:nth-child(7){ left:78%; animation-delay:2.8s; transform:scale(0.75); }
+.embers span:nth-child(8){ left:86%; animation-delay:0.4s; transform:scale(1.0); }
+.embers span:nth-child(9){ left:92%; animation-delay:3.6s; transform:scale(0.9); }
+.embers span:nth-child(10){ left:15%; animation-delay:4.2s; transform:scale(0.7); }
+
+@keyframes ember-rise{
+  0%   { transform: translateY(0) scale(0.8); opacity: 0; }
+  12%  { opacity: 0.55; }
+  60%  { opacity: 0.25; }
+  100% { transform: translateY(-110vh) scale(1.2); opacity: 0; }
+}
+
+/* Keep page content above embers */
+header, main, footer, section, .content {
+  position: relative;
+  z-index: 2;
+}
