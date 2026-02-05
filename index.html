@@ -4,42 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jamie McCann | Official Author Site</title>
-  <meta name="description" content="Step into the shadows and find the fire — emotional, haunting, and unforgettable dark romance and dark fantasy." />
+  <meta name="description" content="Step into the shadows and find the fire — emotional, haunting, and unforgettable love stories by Jamie McCann.">
+  <meta name="keywords" content="dark romance, fantasy romance, emotional love stories, haunting romance, Jamie McCann, Twin Flame, fantasy author">
 
-  <!-- Social Preview (Main Page) -->
+  <!-- Social Preview -->
   <meta property="og:title" content="Jamie McCann | Official Author Site" />
-  <meta property="og:description" content="Step into the shadows and find the fire — emotional, haunting, and unforgettable dark romance and dark fantasy." />
-  <meta property="og:image" content="https://jamiemccann.com/assets/images/social-preview.png" />
-  <meta property="og:url" content="https://jamiemccann.com" />
+  <meta property="og:description" content="Step into the shadows and find the fire — emotional, haunting, and unforgettable love stories by Jamie McCann." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/jmccann917/Jamiemccann/main/MainSharePreview.png" />
+  <meta property="og:url" content="https://jmccann917.github.io/Jamiemccann/index.html" />
   <meta property="og:type" content="website" />
 
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Jamie McCann | Official Author Site" />
-  <meta name="twitter:description" content="Step into the shadows and find the fire — emotional, haunting, and unforgettable dark romance and dark fantasy." />
-  <meta name="twitter:image" content="https://jamiemccann.com/assets/images/social-preview.png" />
+  <meta name="twitter:description" content="Step into the shadows and find the fire — emotional, haunting, and unforgettable love stories by Jamie McCann." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/jmccann917/Jamiemccann/main/MainSharePreview.png" />
 
-  <link rel="stylesheet" href="mainpage.css" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="mainpage.css">
 </head>
-
 <body>
+
+  <!-- Optional fog overlay -->
   <div class="fog-overlay"></div>
 
   <!-- Top Banner -->
   <header class="top-banner">
     <a href="https://jamiemccann.com/blog" class="banner-link banner-left">🌙 Read My Blog</a>
     <h1 class="page-title">Jamie McCann | Official Author Site</h1>
-
-    <!-- Desktop right-side links -->
-    <div class="banner-right-links">
-      <a href="about.html" class="banner-link">✨ About Me</a>
-      <a href="links.html" class="banner-link">🔗 Links</a>
-    </div>
+    <a href="about.html" class="banner-link banner-right">✨ About Me</a>
 
     <!-- Mobile row -->
     <nav class="mobile-links">
       <a href="https://jamiemccann.com/blog" class="banner-link">🌙 Read My Blog</a>
       <a href="about.html" class="banner-link">✨ About Me</a>
-      <a href="links.html" class="banner-link">🔗 Links</a>
     </nav>
   </header>
 
@@ -53,33 +53,45 @@
       </a>
 
       <!-- Coming Soon -->
-      <a href="comingsoon.html" class="work-card">
-        <img src="Bound_by_the_Hollow_Cover.png" alt="Bound by the Hollow Cover">
+      <a href="#newsletter" class="work-card coming-soon-card">
+        <div class="cs-card">
+          <h3>Bound by the Hollow Coming Soon</h3>
+          <p>Subscribe for the cover reveal and exclusive sneak peeks!</p>
+        </div>
         <span>Bound by the Hollow</span>
       </a>
+
+      <!-- Moonbound (hidden) -->
+      <a href="moonbound.html" class="work-card" style="display: none;">
+        <img src="moonboundcover.png" alt="Moonbound Cover">
+        <span>Moonbound</span>
+      </a>
     </div>
-
-    <!-- Newsletter -->
-    <section class="newsletter-section" id="newsletter">
-      <h2>Join My Newsletter</h2>
-      <p>Get updates, behind-the-scenes content, and release news. No spam—just story magic.</p>
-
-      <!-- MailerLite Universal -->
-      <script>
-        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-        ml('account', '2078380');
-      </script>
-      <!-- End MailerLite Universal -->
-
-      <div class="ml-embedded" data-form="himz7H"></div>
-    </section>
   </main>
 
-  <footer>
-    <p>© Jamie McCann</p>
+  <!-- Newsletter Footer (INLINE FORM, no popup) -->
+  <footer id="newsletter" class="newsletter-footer">
+    <h2 class="newsletter-heading">🔥 Subscribe to My Newsletter 🔥</h2>
+    <p class="newsletter-tagline">
+      Step into the fire — get exclusive updates, sneak peeks, and dark romance secrets before anyone else.
+    </p>
+
+    <!-- Pretty wrapper so the right side lines up cleanly -->
+    <div class="newsletter-embed">
+      <!-- MailerLite embedded form -->
+      <div class="ml-embedded" data-form="himz7H"></div>
+    </div>
   </footer>
+
+  <!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2078380');
+</script>
+<!-- End MailerLite Universal -->
+
 </body>
 </html>
