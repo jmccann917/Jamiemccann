@@ -1,0 +1,293 @@
+html { scroll-behavior: smooth; }
+
+/* ===== Base ===== */
+body {
+  background: linear-gradient(rgba(106, 90, 205, 0.6), rgba(106, 90, 205, 0.6)), url('/assets/images/background.webp') center/cover no-repeat fixed;
+  color: #EDEDED;
+  font-family: 'AppleGaramond', serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===== Top Banner (site-wide default) ===== */
+.top-banner {
+  position: relative;
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center title on desktop */
+}
+
+.page-title {
+  margin: 0;
+  font-family: 'Cinzel Decorative', serif;
+  color: #C8A2C8;
+  text-shadow: 0 0 6px rgba(0,0,0,0.6);
+  font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+  line-height: 1.2;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* Default header pill positions (hard-left / hard-right) */
+.banner-left {
+  position: absolute;
+  left: .75rem;       /* tighter to the edge */
+  top: 50%;
+  transform: translateY(-50%);
+}
+.banner-right {
+  position: absolute;
+  right: .75rem;      /* tighter to the edge */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* NEW: Right-side container for multiple links (About + Links) */
+.banner-right-links{
+  position: absolute;
+  right: .75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.banner-link {
+  color: #EECFFB;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-family: 'Cinzel Decorative', serif;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(200,162,200,0.3);
+}
+.banner-link:hover {
+  background: rgba(200,162,200,0.2);
+  box-shadow: 0 0 8px rgba(255,182,193,0.4);
+}
+
+/* Hide the mobile row by default (prevents duplicates on desktop) */
+.mobile-links,
+.top-links-row { display: none; }
+
+/* ===== Tablet defaults (site-wide) ===== */
+@media (max-width: 1100px) {
+  .banner-left, .banner-right, .banner-right-links { display: none; }
+  .mobile-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 6px;
+  }
+  .page-title {
+    font-size: clamp(1.3rem, 4.2vw, 1.7rem);
+    white-space: normal;
+  }
+}
+
+/* Show the small-screen row nav only on phones */
+@media (max-width: 900px) {
+  .top-links-row{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  .mobile-links { flex-direction: column; align-items: center; gap: 8px; }
+  .banner-link { font-size: 0.9rem; padding: 0.4rem 0.6rem; }
+  .page-title { font-size: 1.3rem; }
+}
+
+/* ===== Work Cards ===== */
+.works-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+.work-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #D8B4F8;
+  font-size: 1.2rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.work-card img {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.55);
+}
+.work-card:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 25px rgba(255,105,180,0.5);
+  color: #fff;
+}
+
+/* ===== Coming Soon Card ===== */
+.coming-soon-card { color: #D8B4F8; }
+.cs-card {
+  width: 300px;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background: #1c1124;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.55);
+  padding: 1rem;
+  text-align: center;
+}
+.cs-card h3 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.5rem;
+  color: #F0D1FF;
+  margin-bottom: 0.75rem;
+}
+.cs-card p {
+  font-size: 1rem;
+  color: #EDEDED;
+  max-width: 240px;
+  line-height: 1.4;
+}
+
+/* ========== Newsletter (inline, bottom of index) ========== */
+.newsletter-footer {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 2.25rem 1rem 2.75rem;
+  text-align: center;
+  background: rgba(0,0,0,0.70);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.newsletter-footer h2 {
+  margin: 0 0 .6rem;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  color: #E7D2FF;
+  text-shadow: 0 0 8px rgba(0,0,0,.55);
+}
+.newsletter-tagline {
+  margin: 0 auto 1.1rem;
+  max-width: 1100px;
+  color: #EDE0FF;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+/* Background panel */
+.newsletter-panel {
+  margin: 1.2rem auto 0;
+  max-width: 850px; /* pulled in a little so form doesn’t span too wide */
+  padding: 1.25rem 1rem;
+  background: rgba(10,6,18,.82);
+  border: 1px solid rgba(186,85,211,.45);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.45);
+}
+
+
+
+/* ========== About page layout ========== */
+.about-page .top-banner{
+  position: relative;
+  justify-content: center; /* keep title centered */
+}
+
+/* Mobile row hidden by default on About */
+.about-page .top-links-row{ display: none; }
+
+/* Push Return Home to far left, socials to far right (desktop/tablet) */
+.about-page .top-left-links,
+.about-page .top-right-icons{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+.about-page .top-left-links{ left: 1rem; }
+.about-page .top-right-icons{ right: 1rem; }
+
+/* On small screens: hide side links, show the row under the title */
+@media (max-width: 900px){
+  .about-page .top-left-links,
+  .about-page .top-right-icons{ display: none; }
+
+  .about-page .top-links-row{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 8px;
+  }
+}
+
+/* Desktop: smaller photo, content side-by-side with a clean readable box */
+.about-page .about-container{
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.about-page .author-photo{
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #000;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  object-fit: contain; /* prevents squish */
+  justify-self: center;
+}
+
+.about-page .about-text{
+  background: rgba(0,0,0,0.65);
+  border: 1px solid rgba(186,85,211,0.45);
+  border-radius: 16px;
+  box-shadow: 0 0 22px rgba(0,0,0,0.55);
+  padding: 1.25rem 1.35rem;
+  color: #F3E7DF;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+/* Mobile: photo shrinks + about box centers underneath */
+@media (max-width: 768px){
+  .about-page .about-container{
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1.5rem auto 2rem;
+  }
+  .about-page .author-photo{
+    width: min(260px, 78vw);
+    max-width: 78vw;
+  }
+}
