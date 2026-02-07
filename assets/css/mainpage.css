@@ -142,32 +142,148 @@ body {
   color: #fff;
 }
 
-/* ===== Coming Soon Card ===== */
-.coming-soon-card { color: #D8B4F8; }
-.cs-card {
-  width: 300px;
-  min-height: 450px;
+/* ===== Coming Soon Card (Bound by the Hollow) ===== */
+.coming-soon-card {
+  color: #D8B4F8;
+}
+
+/* Matches Twin Flame cover sizing (300px wide, ~450px tall) */
+.coming-soon-card .cs-card {
+  width: 290px;
+  min-height: 435px;            /* exact Twin Flame height */
+  border-radius: 12px;          /* match cover card */
+  padding: 1.4rem 1.2rem;
+  text-align: center;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 12px;
-  background: #1c1124;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.55);
-  padding: 1rem;
-  text-align: center;
+  gap: 14px;
+
+  position: relative;
+  overflow: hidden;
+
+  /* Stronger Hollow overlay + balanced transparency */
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(8, 5, 18, 0.45),
+      rgba(8, 5, 18, 0.55)
+    ),
+    url("/assets/images/hollow-overlay.webp"),
+    radial-gradient(circle at 20% 15%, rgba(170, 90, 255, 0.22), transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(255, 170, 90, 0.14), transparent 65%);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border: 1px solid rgba(200, 160, 255, 0.18);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.55),
+    0 0 55px rgba(180, 90, 255, 0.22),
+    inset 0 0 40px rgba(190, 120, 255, 0.10);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.cs-card h3 {
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 1.5rem;
-  color: #F0D1FF;
-  margin-bottom: 0.75rem;
+
+/* Glowing rune ring focal element (behind title) */
+.coming-soon-card .cs-card::before {
+  content: "";
+  position: absolute;
+  top: 78px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 185px;
+  height: 185px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(230, 200, 255, 0.22);
+
+  background:
+    radial-gradient(circle at center, rgba(120, 70, 255, 0.18), transparent 60%),
+    conic-gradient(
+      from 0deg,
+      rgba(255, 190, 120, 0.00),
+      rgba(255, 190, 120, 0.22),
+      rgba(180, 100, 255, 0.28),
+      rgba(255, 190, 120, 0.18),
+      rgba(255, 190, 120, 0.00)
+    );
+
+  opacity: 0.35;
+  pointer-events: none;
 }
-.cs-card p {
-  font-size: 1rem;
-  color: #EDEDED;
-  max-width: 240px;
-  line-height: 1.4;
+
+/* Soft vignette so the text pops */
+.coming-soon-card .cs-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0.10),
+    rgba(0,0,0,0.55) 85%
+  );
+
+  opacity: 0.60;
+  pointer-events: none;
+}
+
+/* Bring text above overlays */
+.coming-soon-card .cs-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.coming-soon-card .cs-card h3 {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 1.55rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #F6E2FF;
+
+  text-shadow:
+    0 0 22px rgba(200, 120, 255, 0.55),
+    0 0 40px rgba(120, 70, 255, 0.20);
+
+  margin: 0;
+}
+
+.coming-soon-card .cs-card p {
+  font-size: 1.02rem;
+  line-height: 1.55;
+  max-width: 245px;
+
+  color: rgba(245, 235, 255, 0.90);
+  margin: 0;
+}
+
+/* “Trailer line” */
+.coming-soon-card .cs-whisper {
+  margin-top: 6px;
+  font-style: italic;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+
+  color: rgba(235, 210, 255, 0.95);
+
+  text-shadow:
+    0 0 20px rgba(180, 100, 255, 0.55);
+}
+
+/* Hover – same energy as Twin Flame card */
+.coming-soon-card:hover .cs-card {
+  transform: translateY(-2px) scale(1.00);
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.55),
+    0 0 75px rgba(200, 120, 255, 0.28),
+    inset 0 0 45px rgba(190, 120, 255, 0.14);
 }
 
 /* ========== Newsletter (inline, bottom of index) ========== */
@@ -207,7 +323,19 @@ body {
   box-shadow: 0 12px 30px rgba(0,0,0,.45);
 }
 
+/* Hide by default */
+.hollow-special{
+  display: none !important;
+  margin: 12px auto 18px;
+  font-style: italic;
+  color: rgba(235, 210, 255, 0.95);
+  text-shadow: 0 0 14px rgba(180, 100, 255, 0.5);
+}
 
+/* Only show when it is the URL target */
+#hollow-special:target{
+  display: block !important;
+}
 
 /* ========== About page layout ========== */
 .about-page .top-banner{
