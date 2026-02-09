@@ -277,7 +277,7 @@ body {
     0 0 20px rgba(180, 100, 255, 0.55);
 }
 
-/* Hover – same energy as Twin Flame card */
+/* Card Hover */
 .coming-soon-card:hover .cs-card {
   transform: translateY(-2px) scale(1.00);
   box-shadow:
